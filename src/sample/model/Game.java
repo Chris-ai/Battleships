@@ -14,11 +14,11 @@ public class Game {
     }
 
 
-    public static Game getINSTANCE() {
-        if(INSTANCE == null)
-            INSTANCE = new Game();
+    /*public static Game getINSTANCE() {
+       if(INSTANCE == null)
+           INSTANCE = new Game();
         return INSTANCE;
-    }
+    }*/
 
 
     /**

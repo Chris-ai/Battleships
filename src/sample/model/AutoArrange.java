@@ -2,15 +2,19 @@ package sample.model;
 
 import java.util.List;
 import java.util.Random;
+import java.util.SimpleTimeZone;
 
-    public class AutoArrange implements Strategy {
+public class AutoArrange implements Strategy {
+        private ShipSimpleFactory s;
 
         @Override
         public int[][] setShipsOnBoard(int X, int Y, int[][] Board, List<ShipModel> ShipList) {
+            s = new ShipSimpleFactory();
             sb5(X,Y,Board,ShipList);
             sb4(X,Y,Board,ShipList);
             sb3(X,Y,Board,ShipList);
             sb2(X,Y,Board,ShipList);
+
             return Board;
         }
 
@@ -34,7 +38,7 @@ import java.util.Random;
 
                     Board[x][y + i] = 5;
                 }
-                ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                ShipList.add(s.place1stShip(X,Y,orient));
 
             } else {
                 while (x > shipLenght) {
@@ -46,7 +50,7 @@ import java.util.Random;
 
                     Board[x+i][y] = 5;
                 }
-                ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                ShipList.add(s.place1stShip(X,Y,orient));
 
             }
 
@@ -76,7 +80,7 @@ import java.util.Random;
 
                         Board[x][y+i]=4;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place2ndShip(X,Y,orient));
                 } else {
                     sb4(X,Y,Board,ShipList);
                 }
@@ -98,7 +102,7 @@ import java.util.Random;
 
                         Board[x+i][y] = 4;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place2ndShip(X,Y,orient));
                 } else {
                     sb4(X,Y,Board,ShipList);
                 }
@@ -132,7 +136,7 @@ import java.util.Random;
 
                         Board[x][y+i] = 3;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place3rdShip(X,Y,orient));
                 } else {
                     sb3(X,Y,Board,ShipList);
                 }
@@ -153,7 +157,7 @@ import java.util.Random;
 
                         Board[x+i][y]=3;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place3rdShip(X,Y,orient));
                 } else {
                     sb3(X,Y,Board,ShipList);
                 }
@@ -186,7 +190,7 @@ import java.util.Random;
 
                         Board[x][y+i] = 2;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place4thShip(X,Y,orient));
                 } else {
                     sb2(X,Y,Board,ShipList);
                 }
@@ -207,7 +211,7 @@ import java.util.Random;
 
                         Board[x+i][y]=2;
                     }
-                    ShipList.add(new ShipModel(x,y,shipLenght,0,orient));
+                    ShipList.add(s.place4thShip(X,Y,orient));
                 } else {
                     sb2(X,Y,Board,ShipList);
                 }
