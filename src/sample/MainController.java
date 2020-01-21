@@ -19,6 +19,7 @@ public class MainController {
     public Button button_exit;
     public TextField nickname;
 
+    private PlayerModel Player;
 
     public void StartGameButtonPressed(ActionEvent actionEvent) throws IOException {
 
@@ -33,7 +34,7 @@ public class MainController {
             window.setScene(scene);
             window.show();
 
-            PlayerModel newPlayer = new PlayerModel(nickname.getText(), 0, 0);
+            Player = new PlayerModel(nickname.getText());
         }
     }
 
@@ -46,4 +47,7 @@ public class MainController {
     }
 
 
+    public PlayerModel getPlayer() {
+        return Player;
+    }
 }

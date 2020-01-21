@@ -12,11 +12,19 @@ public class BoardModel {
     private Strategy s;
 
 
+<<<<<<< HEAD
     public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList) {
-        this.Board = new int[X][Y];
         this.X=X;
         this.s=s;
         this.Y=Y;
+        this.Board = new int[X][Y];
+=======
+    public BoardModel(Strategy s,List<ShipModel> ShipList) {
+        this.Board = new int[X][Y];
+        this.X=10;
+        this.s=s;
+        this.Y=10;
+>>>>>>> master
         this.ShipList=ShipList;
 
         for (int i = 0; i < X; i++) {
@@ -26,11 +34,11 @@ public class BoardModel {
             }
         }
     }
-    public BoardModel(int X, int Y,Strategy s) {
+    public BoardModel(Strategy s) {
         this.Board = new int[X][Y];
-        this.X=X;
+        this.X=10;
         this.s=s;
-        this.Y=Y;
+        this.Y=10;
 
         for (int i = 0; i < X; i++) {
             for (int j = 0; j < Y; j++) {

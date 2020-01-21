@@ -3,12 +3,14 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.model.*;
@@ -40,11 +42,14 @@ public class GameController implements Initializable {
 
       public List<Label> labels = new ArrayList<>();
       public List<Button> buttons = new ArrayList<>();
-      private BoardModel ComputerBoard;
+     public GridPane EnemyBoard;
+    private BoardModel ComputerBoard;
       private BoardModel PlayerTable;
       private Button[][] buttonArray = new Button[10][10];
       private Label[][] labelArray = new Label[10][10];
       private Computer c;
+
+
 
       public Button but00;    public Button but01;
       public Button but02;    public Button but03;
@@ -295,6 +300,9 @@ public class GameController implements Initializable {
 
 
          /*ShipModel s = new ShipModel(0,5,3,0,0);
+=======
+        ShipModel s = new ShipModel(0,5,3,0,0);
+>>>>>>> Stashed changes
          ShipModel s1 = new ShipModel(1,3,4,0,0);
          ShipModel s2 = new ShipModel(6,5,2,0,1);
          ShipModel s3 = new ShipModel(3,3,5,0,0);*/
@@ -322,8 +330,21 @@ public class GameController implements Initializable {
          pomShipList1.add(f1.getS3());
          pomShipList1.add(f1.getS4());
 
-         ComputerBoard =new BoardModel(10, 10, new ManualArrange(),pomShipList);
+<<<<<<< HEAD
+         ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
+=======
+         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
+         PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
+
+
+         ComputerBoard =new BoardModel(new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
+>>>>>>> master
+
+
+         ComputerBoard =new BoardModel(10,10,new AutoArrange());
+         PlayerTable = new BoardModel(10,10,new AutoArrange());
 
          ComputerBoard.setShipBoard();
          PlayerTable.setShipBoard();
@@ -332,31 +353,31 @@ public class GameController implements Initializable {
          System.out.println("\n\n\n");
          PlayerTable.printBoardpom();
 
-         buttonArray[0][0]= but00;        buttonArray[0][1]= but01;        buttonArray[0][2]= but02;        buttonArray[0][3]= but03;
-         buttonArray[0][4]= but04;        buttonArray[0][5]= but05;        buttonArray[0][6]= but06;        buttonArray[0][7]= but07;
-         buttonArray[0][8]= but08;        buttonArray[0][9]= but09;        buttonArray[1][0]= but10;        buttonArray[1][1]= but11;
-         buttonArray[1][2]= but12;        buttonArray[1][3]= but13;        buttonArray[1][4]= but14;        buttonArray[1][5]= but15;
-         buttonArray[1][6]= but16;        buttonArray[1][7]= but17;        buttonArray[1][8]= but18;        buttonArray[1][9]= but19;
-         buttonArray[2][0]= but20;        buttonArray[2][1]= but21;        buttonArray[2][2]= but22;        buttonArray[2][3]= but23;
-         buttonArray[2][4]= but24;        buttonArray[2][5]= but25;        buttonArray[2][6]= but26;        buttonArray[2][7]= but27;
-         buttonArray[2][8]= but28;        buttonArray[2][9]= but29;        buttonArray[3][0]= but30;        buttonArray[3][1]= but31;
-         buttonArray[3][2]= but32;        buttonArray[3][3]= but33;        buttonArray[3][4]= but34;        buttonArray[3][5]= but35;
-         buttonArray[3][6]= but36;        buttonArray[3][7]= but37;        buttonArray[3][8]= but38;        buttonArray[3][9]= but39;
+         buttonArray[0][0]= but00; buttonArray[0][1]= but01; buttonArray[0][2]= but02; buttonArray[0][3]= but03;
+         buttonArray[0][4]= but04; buttonArray[0][5]= but05; buttonArray[0][6]= but06; buttonArray[0][7]= but07;
+         buttonArray[0][8]= but08; buttonArray[0][9]= but09; buttonArray[1][0]= but10; buttonArray[1][1]= but11;
+         buttonArray[1][2]= but12; buttonArray[1][3]= but13; buttonArray[1][4]= but14; buttonArray[1][5]= but15;
+         buttonArray[1][6]= but16; buttonArray[1][7]= but17; buttonArray[1][8]= but18; buttonArray[1][9]= but19;
+         buttonArray[2][0]= but20; buttonArray[2][1]= but21; buttonArray[2][2]= but22; buttonArray[2][3]= but23;
+         buttonArray[2][4]= but24; buttonArray[2][5]= but25; buttonArray[2][6]= but26; buttonArray[2][7]= but27;
+         buttonArray[2][8]= but28; buttonArray[2][9]= but29; buttonArray[3][0]= but30; buttonArray[3][1]= but31;
+         buttonArray[3][2]= but32; buttonArray[3][3]= but33; buttonArray[3][4]= but34; buttonArray[3][5]= but35;
+         buttonArray[3][6]= but36; buttonArray[3][7]= but37; buttonArray[3][8]= but38; buttonArray[3][9]= but39;
 
-         buttonArray[4][0]= but40;        buttonArray[4][1]= but41;        buttonArray[4][2]= but42;        buttonArray[4][3]= but43;
-         buttonArray[4][4]= but44;        buttonArray[4][5]= but45;        buttonArray[4][6]= but46;        buttonArray[4][7]= but47;
-         buttonArray[4][8]= but48;        buttonArray[4][9]= but49;
-         buttonArray[5][0]= but50;        buttonArray[5][1]= but51;        buttonArray[5][2]= but52;        buttonArray[5][3]= but53;        buttonArray[5][4]= but54;        buttonArray[5][5]= but55;
-         buttonArray[5][6]= but56;        buttonArray[5][7]= but57;        buttonArray[5][8]= but58;        buttonArray[5][9]= but59;        buttonArray[6][0]= but60;        buttonArray[6][1]= but61;
-         buttonArray[6][2]= but62;        buttonArray[6][3]= but63;        buttonArray[6][4]= but64;        buttonArray[6][5]= but65;        buttonArray[6][6]= but66;        buttonArray[6][7]= but67;
-         buttonArray[6][8]= but68;        buttonArray[6][9]= but69;        buttonArray[7][0]= but70;        buttonArray[7][1]= but71;
-         buttonArray[7][2]= but72;        buttonArray[7][3]= but73;        buttonArray[7][4]= but74;        buttonArray[7][5]= but75;
-         buttonArray[7][6]= but76;        buttonArray[7][7]= but77;        buttonArray[7][8]= but78;        buttonArray[7][9]= but79;        buttonArray[8][0]= but80;
-         buttonArray[8][1]= but81;        buttonArray[8][2]= but82;        buttonArray[8][3]= but83;        buttonArray[8][4]= but84;
-         buttonArray[8][5]= but85;        buttonArray[8][6]= but86;        buttonArray[8][7]= but87;        buttonArray[8][8]= but88;
-         buttonArray[8][9]= but89;        buttonArray[9][0]= but90;        buttonArray[9][1]= but91;        buttonArray[9][2]= but92;
-         buttonArray[9][3]= but93;        buttonArray[9][4]= but94;        buttonArray[9][5]= but95;        buttonArray[9][6]= but96;
-         buttonArray[9][7]= but97;        buttonArray[9][8]= but98;        buttonArray[9][9]= but99;
+         buttonArray[4][0]= but40; buttonArray[4][1]= but41; buttonArray[4][2]= but42; buttonArray[4][3]= but43;
+         buttonArray[4][4]= but44; buttonArray[4][5]= but45; buttonArray[4][6]= but46; buttonArray[4][7]= but47;
+         buttonArray[4][8]= but48; buttonArray[4][9]= but49;
+         buttonArray[5][0]= but50; buttonArray[5][1]= but51;  buttonArray[5][2]= but52;        buttonArray[5][3]= but53;        buttonArray[5][4]= but54;        buttonArray[5][5]= but55;
+         buttonArray[5][6]= but56; buttonArray[5][7]= but57;   buttonArray[5][8]= but58;        buttonArray[5][9]= but59;        buttonArray[6][0]= but60;        buttonArray[6][1]= but61;
+         buttonArray[6][2]= but62; buttonArray[6][3]= but63;  buttonArray[6][4]= but64;        buttonArray[6][5]= but65;        buttonArray[6][6]= but66;        buttonArray[6][7]= but67;
+         buttonArray[6][8]= but68; buttonArray[6][9]= but69;    buttonArray[7][0]= but70;        buttonArray[7][1]= but71;
+         buttonArray[7][2]= but72; buttonArray[7][3]= but73;        buttonArray[7][4]= but74;        buttonArray[7][5]= but75;
+         buttonArray[7][6]= but76; buttonArray[7][7]= but77;        buttonArray[7][8]= but78;        buttonArray[7][9]= but79;        buttonArray[8][0]= but80;
+         buttonArray[8][1]= but81; buttonArray[8][2]= but82;        buttonArray[8][3]= but83;        buttonArray[8][4]= but84;
+         buttonArray[8][5]= but85; buttonArray[8][6]= but86;        buttonArray[8][7]= but87;        buttonArray[8][8]= but88;
+         buttonArray[8][9]= but89; buttonArray[9][0]= but90;        buttonArray[9][1]= but91;        buttonArray[9][2]= but92;
+         buttonArray[9][3]= but93; buttonArray[9][4]= but94;        buttonArray[9][5]= but95;        buttonArray[9][6]= but96;
+         buttonArray[9][7]= but97; buttonArray[9][8]= but98;        buttonArray[9][9]= but99;
 
          labelArray[0][0] = lab00; labelArray[0][1] = lab01; labelArray[0][2] = lab02; labelArray[0][3] = lab03; labelArray[0][4] = lab04; labelArray[0][5] = lab05; labelArray[0][6] = lab06; labelArray[0][7] = lab07; labelArray[0][8] = lab08; labelArray[0][9] = lab09;
          labelArray[1][0] = lab10; labelArray[1][1] = lab11; labelArray[1][2] = lab12; labelArray[1][3] = lab13; labelArray[1][4] = lab14; labelArray[1][5] = lab15; labelArray[1][6] = lab16; labelArray[1][7] = lab17; labelArray[1][8] = lab18; labelArray[1][9] = lab19;
