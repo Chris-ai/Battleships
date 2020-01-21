@@ -24,7 +24,7 @@ import java.util.Set;
 
 import static javax.swing.text.StyleConstants.Background;
 
-public class GameController implements Initializable {
+public class GameController implements Initializable,Observer {
    // to są kolory dla buttonów i labeli, dodajemy je poprzez np. but00.setBackground(missed);
    public static final Background shooted = new Background(new BackgroundFill(Color.LIGHTGREEN,null,null));
    public static final Background missed = new Background(new BackgroundFill(Color.RED,null,null));
@@ -38,7 +38,7 @@ public class GameController implements Initializable {
     lab63, lab64, lab65,lab66, lab67, lab68, lab69, lab70, lab71, lab72, lab73, lab74, lab75, lab76, lab77,
     lab78,lab79,lab80, lab81, lab82, lab83, lab84, lab85, lab86, lab88,lab89,lab90, lab91,lab92, lab93,
      lab94, lab95, lab87, lab96, lab97, lab98,lab99;
-
+public Label infoState;
 
       public List<Label> labels = new ArrayList<>();
       public List<Button> buttons = new ArrayList<>();
@@ -170,7 +170,8 @@ public class GameController implements Initializable {
     * @param ship
     */
    public void ChangeDestroyedShipColor(ShipModel ship,String Who) {
-      int n = 0;
+       ship.setState(-1);
+       int n = 0;
       int ship_orientation = ship.getOrientation(); // 0 - pozioma 1 - pionowa
 
       switch (Who) {
@@ -225,16 +226,22 @@ public class GameController implements Initializable {
                   case 5:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4)) {
                         s.damageShip();
-                        System.out.println("hit");
+                         s.setState(0);
+
+                         System.out.println("hit");
+
                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
+
                         }
                      }
                      break;
                   case 4:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3)) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -242,7 +249,9 @@ public class GameController implements Initializable {
                   case 3:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2)) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -250,7 +259,9 @@ public class GameController implements Initializable {
                   case 2:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1)) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -263,7 +274,9 @@ public class GameController implements Initializable {
                   case 5:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY()) || (x == s.getX() + 3 && y == s.getY()) || (x == s.getX() + 4 && y == s.getY())) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -271,7 +284,9 @@ public class GameController implements Initializable {
                   case 4:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY()) || (x == s.getX() + 3 && y == s.getY())) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -279,7 +294,9 @@ public class GameController implements Initializable {
                   case 3:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY())) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -287,7 +304,9 @@ public class GameController implements Initializable {
                   case 2:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY())) {
                         s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
+                         s.setState(0);
+
+                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
@@ -300,42 +319,47 @@ public class GameController implements Initializable {
       @Override
       public void initialize(URL url, ResourceBundle resourceBundle) {
 
-         ShipSimpleFactory f = new ShipSimpleFactory();
-         f.place1stShip(0,5,0);
-         f.place2ndShip(2,3,0);
-         f.place3rdShip(6,5,1);
-         f.place4thShip(4,3,0);
-         ShipSimpleFactory f1 = new ShipSimpleFactory();
-         f1.place1stShip(0,5,0);
-         f1.place2ndShip(2,3,0);
-         f1.place3rdShip(6,5,1);
-         f1.place4thShip(4,3,0);
+          ShipSimpleFactory f = new ShipSimpleFactory();
+          f.place1stShip(0, 5, 0);
+          f.place2ndShip(2, 3, 0);
+          f.place3rdShip(6, 5, 1);
+          f.place4thShip(4, 3, 0);
+          ShipSimpleFactory f1 = new ShipSimpleFactory();
+          f1.place1stShip(0, 5, 0);
+          f1.place2ndShip(2, 3, 0);
+          f1.place3rdShip(6, 5, 1);
+          f1.place4thShip(4, 3, 0);
 
-         List<ShipModel> pomShipList = new ArrayList<>();
-         List<ShipModel> pomShipList1 = new ArrayList<>();
-         c = new Computer();
-         pomShipList.add(f.getS1());
-         pomShipList.add(f.getS2());
-         pomShipList.add(f.getS3());
-         pomShipList.add(f.getS4());
+          List<ShipModel> pomShipList = new ArrayList<>();
+          List<ShipModel> pomShipList1 = new ArrayList<>();
+          c = new Computer();
+          pomShipList.add(f.getS1());
+          pomShipList.add(f.getS2());
+          pomShipList.add(f.getS3());
+          pomShipList.add(f.getS4());
 
-         pomShipList1.add(f1.getS1());
-         pomShipList1.add(f1.getS2());
-         pomShipList1.add(f1.getS3());
-         pomShipList1.add(f1.getS4());
+          pomShipList1.add(f1.getS1());
+          pomShipList1.add(f1.getS2());
+          pomShipList1.add(f1.getS3());
+          pomShipList1.add(f1.getS4());
 
+
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+          ComputerBoard = new BoardModel(new AutoArrange());
+          PlayerTable = new BoardModel(new AutoArrange());
+>>>>>>> master
 
-         ComputerBoard =new BoardModel( new AutoArrange());
-         PlayerTable = new BoardModel(new AutoArrange());
-
-         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
-         PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
+          ComputerBoard = new BoardModel(new ManualArrange(), pomShipList);
+          PlayerTable = new BoardModel(new ManualArrange(), pomShipList1);
 
 
-         ComputerBoard =new BoardModel(new AutoArrange());
-         PlayerTable = new BoardModel(new AutoArrange());
+          ComputerBoard = new BoardModel(new AutoArrange());
+          PlayerTable = new BoardModel(new AutoArrange());
 
+
+<<<<<<< HEAD
 =======
          ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
@@ -355,15 +379,19 @@ public class GameController implements Initializable {
          ComputerBoard =new BoardModel(10,10,new AutoArrange());
          PlayerTable = new BoardModel(10,10,new AutoArrange());
 
+=======
+          ComputerBoard.setShipBoard();
+          PlayerTable.setShipBoard();
+>>>>>>> master
 
-         ComputerBoard.setShipBoard();
-         PlayerTable.setShipBoard();
+          ComputerBoard.printBoardpom();
+          System.out.println("\n\n\n");
+          PlayerTable.printBoardpom();
+          for (int i = 0; i < 4; i++)
+          {
+              ComputerBoard.getShipList().get(i).registerObserver(this);
 
-         ComputerBoard.printBoardpom();
-         System.out.println("\n\n\n");
-         PlayerTable.printBoardpom();
-         System.out.println(ComputerBoard.getShipList().size());
-         System.out.println(PlayerTable.getShipList().size());
+          }
 
 
          buttonArray[0][0]= but00; buttonArray[0][1]= but01; buttonArray[0][2]= but02; buttonArray[0][3]= but03;
@@ -406,4 +434,13 @@ public class GameController implements Initializable {
 
 
       }
-   }
+
+    @Override
+    public void update(int state)  {
+       if(state==0)
+       infoState.setText("Statek został trafiony");
+       if(state==-1)
+        infoState.setText("Statek został zatopiony");
+
+    }
+}

@@ -1,12 +1,19 @@
 package sample.model;
 
-public class ShipModel {
+import sample.Observer;
+import sample.Subject;
+
+import java.util.ArrayList;
+
+public class ShipModel implements Subject {
+    private ArrayList<Observer> observers = new ArrayList<>();
+
     private String name;
     private int orientation;
     private int x,y;
     private int length;
     private int dmg;
-    private int state; // 1-caly , 0-uszkodzony -1 - zatopiony
+    private int state=1; // 1-caly , 0-uszkodzony -1 - zatopiony
 
 
     public ShipModel(String name,int length){
@@ -58,5 +65,37 @@ public class ShipModel {
 
     public void damageShip() {
         dmg++;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state)  {
+        this.state = state;
+        notifyObservers();
+        System.out.println("!!!!!!!!!!");
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+
+    }
+
+    @Override
+    public void notifyObservers()  {
+        System.out.println(observers.size());
+        for (Observer ob : observers) {
+            System.out.println("Notifying Observers on change in currency change");
+            ob.update(this.state);
+
+        }
     }
 }
