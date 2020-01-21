@@ -13,11 +13,11 @@ public class BoardModel {
 
 
     public BoardModel(Strategy s,List<ShipModel> ShipList) {
-        this.Board = new int[X][Y];
         this.X=10;
         this.s=s;
         this.Y=10;
         this.ShipList=ShipList;
+        this.Board = new int[X][Y];
 
         for (int i = 0; i < X; i++) {
             for (int j = 0; j < Y; j++) {
@@ -26,11 +26,12 @@ public class BoardModel {
             }
         }
     }
+
     public BoardModel(Strategy s) {
-        this.Board = new int[X][Y];
         this.X=10;
         this.s=s;
         this.Y=10;
+        this.Board = new int[X][Y];
 
         for (int i = 0; i < X; i++) {
             for (int j = 0; j < Y; j++) {

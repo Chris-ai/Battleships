@@ -300,17 +300,6 @@ public class GameController implements Initializable {
       @Override
       public void initialize(URL url, ResourceBundle resourceBundle) {
 
-<<<<<<< HEAD
-=======
-
-         /*ShipModel s = new ShipModel(0,5,3,0,0);
-=======
-        ShipModel s = new ShipModel(0,5,3,0,0);
->>>>>>> Stashed changes
-         ShipModel s1 = new ShipModel(1,3,4,0,0);
-         ShipModel s2 = new ShipModel(6,5,2,0,1);
-         ShipModel s3 = new ShipModel(3,3,5,0,0);*/
->>>>>>> master
          ShipSimpleFactory f = new ShipSimpleFactory();
          f.place1stShip(0,5,0);
          f.place2ndShip(2,3,0);
@@ -335,17 +324,17 @@ public class GameController implements Initializable {
          pomShipList1.add(f1.getS3());
          pomShipList1.add(f1.getS4());
 
-<<<<<<< HEAD
-         ComputerBoard =new BoardModel(10, 10, new AutoArrange());
-         PlayerTable = new BoardModel(10,10,new AutoArrange());
-=======
+
+         ComputerBoard =new BoardModel( new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
+
          ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
 
 
          ComputerBoard =new BoardModel(new AutoArrange());
          PlayerTable = new BoardModel(new AutoArrange());
->>>>>>> master
+
 
          ComputerBoard.setShipBoard();
          PlayerTable.setShipBoard();
