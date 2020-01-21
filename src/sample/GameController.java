@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class GameController {
+
+   // to są kolory dla buttonów i labeli, dodajemy je poprzez np. but00.setBackground(missed);
    public static final Background shooted = new Background(new BackgroundFill(Color.LIGHTGREEN,null,null));
    public static final Background missed = new Background(new BackgroundFill(Color.RED,null,null));
 
@@ -94,17 +96,12 @@ public class GameController {
       public Button but96;    public Button but97;
       public Button but98;    public Button but99;
 
-    /*public Label lab00, lab01,lab02, lab03, lab04,lab05,lab06, lab17, lab07, lab08,lab09,
-            lab10, lab11, lab12, lab13,lab14,lab15, lab16, lab18, lab19, lab20, lab21, lab22,
-            lab23, lab24, lab25, lab26, lab27,lab28,lab38, lab29, lab30, lab31, lab32, lab33,
-            lab34, lab35, lab36, lab37, lab39, lab40, lab41, lab42, lab43,lab44, lab45, lab46, lab47, lab48,
-            lab49, lab50, lab51, lab52, lab53, lab54,lab55, lab56,lab57, lab58,lab59,lab60, lab61,lab62,
-            lab63, lab64, lab65,lab66, lab67, lab68, lab69, lab70, lab71, lab72, lab73, lab74, lab75, lab76, lab77,
-            lab78,lab79,lab80, lab81, lab82, lab83, lab84, lab85, lab86, lab88,lab89,lab90, lab91,lab92, lab93,
-            lab94, lab95, lab87, lab96, lab97, lab98,lab99;*/
+   /**
+    * Trzeba poprawić te metody !
+    * @param actionEvent
+    */
 
-
-      public void AboutButtonPressed(ActionEvent actionEvent) {
+   public void AboutButtonPressed(ActionEvent actionEvent) {
          int i,j;
          int pomX=0;
          int pomY = 0;

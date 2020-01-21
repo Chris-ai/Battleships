@@ -170,8 +170,14 @@
       </HBox>
       <HBox layoutX="402.0" layoutY="65.0" prefHeight="25.0" prefWidth="103.0">
          <children>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" text="Łatwy" />
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Trudny" />
+            <ToggleButton fx:id="toggle_easy" mnemonicParsing="false" onAction="#easypressed" prefHeight="25.0" prefWidth="56.0" text="Łatwy" />
+            <ToggleButton fx:id="toggle_hard" mnemonicParsing="false" onAction="#hardpressed" prefHeight="25.0" prefWidth="58.0" text="Trudny" />
+         </children>
+      </HBox>
+      <HBox layoutX="205.0" layoutY="65.0" prefHeight="25.0" prefWidth="168.0">
+         <children>
+            <ToggleButton fx:id="toggle_easy1" mnemonicParsing="false" onAction="#easypressed" prefHeight="25.0" prefWidth="100.0" text="Poziomo" />
+            <ToggleButton fx:id="toggle_hard1" mnemonicParsing="false" onAction="#hardpressed" prefHeight="26.0" prefWidth="99.0" text="Pionowo" />
          </children>
       </HBox>
    </children>
