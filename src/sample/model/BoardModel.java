@@ -26,6 +26,19 @@ public class BoardModel {
             }
         }
     }
+    public BoardModel(int X, int Y,Strategy s) {
+        this.Board = new int[X][Y];
+        this.X=X;
+        this.s=s;
+        this.Y=Y;
+
+        for (int i = 0; i < X; i++) {
+            for (int j = 0; j < Y; j++) {
+
+                Board[i][j] = 0;
+            }
+        }
+    }
 
 
     public void shootBoard(Position p){

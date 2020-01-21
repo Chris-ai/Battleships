@@ -121,11 +121,11 @@ public class GameController implements Initializable {
 
             }
          }
-         if (ComputerBoard.getPos(pomX,pomY)!=0){
+         if (PlayerTable.getPos(pomX,pomY)!=0){
             buttonArray[pomX][pomY].setBackground(shooted);
             buttonArray[pomX][pomY].setDisable(true);
 
-            checkDamage(pomX,pomY, ComputerBoard, param);
+            checkDamage(pomX,pomY, PlayerTable, param);
             Position p = c.easyShot(10);
 
 
@@ -209,14 +209,6 @@ public class GameController implements Initializable {
                switch (length) {
 
                   case 5:
-                     if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4) || (x == s.getX() && y == s.getY() + 5)) {
-                        s.damageShip();
-                        if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s,whichPlayer);
-                        }
-                     }
-                     break;
-                  case 4:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
@@ -224,7 +216,7 @@ public class GameController implements Initializable {
                         }
                      }
                      break;
-                  case 3:
+                  case 4:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
@@ -232,8 +224,16 @@ public class GameController implements Initializable {
                         }
                      }
                      break;
-                  case 2:
+                  case 3:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2)) {
+                        s.damageShip();
+                        if (s.getDemage() == s.getLength()) {
+                           ChangeDestroyedShipColor(s,whichPlayer);
+                        }
+                     }
+                     break;
+                  case 2:
+                     if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
@@ -297,8 +297,8 @@ public class GameController implements Initializable {
          pomShipList.add(s2);
          pomShipList.add(s3);
 
-         ComputerBoard =new BoardModel(10, 10, new ManualArrange(),pomShipList);
-         PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList);
+         ComputerBoard =new BoardModel(10, 10, new AutoArrange());
+         PlayerTable = new BoardModel(10,10,new AutoArrange());
 
          ComputerBoard.setShipBoard();
          PlayerTable.setShipBoard();
