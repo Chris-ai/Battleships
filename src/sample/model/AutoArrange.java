@@ -7,6 +7,7 @@ import java.util.SimpleTimeZone;
 public class AutoArrange implements Strategy {
         private ShipSimpleFactory s;
 
+
         @Override
         public int[][] setShipsOnBoard(int X, int Y, int[][] Board, List<ShipModel> ShipList) {
             s = new ShipSimpleFactory();
@@ -38,7 +39,7 @@ public class AutoArrange implements Strategy {
 
                     Board[x][y + i] = 5;
                 }
-                ShipList.add(s.place1stShip(X,Y,orient));
+                ShipList.add(s.place1stShip(x,y,orient));
 
             } else {
                 while (x > shipLenght) {
@@ -50,7 +51,7 @@ public class AutoArrange implements Strategy {
 
                     Board[x+i][y] = 5;
                 }
-                ShipList.add(s.place1stShip(X,Y,orient));
+                ShipList.add(s.place1stShip(x,y,orient));
 
             }
 
@@ -80,7 +81,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x][y+i]=4;
                     }
-                    ShipList.add(s.place2ndShip(X,Y,orient));
+                    ShipList.add(s.place2ndShip(x,y,orient));
                 } else {
                     sb4(X,Y,Board,ShipList);
                 }
@@ -102,7 +103,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x+i][y] = 4;
                     }
-                    ShipList.add(s.place2ndShip(X,Y,orient));
+                    ShipList.add(s.place2ndShip(x,y,orient));
                 } else {
                     sb4(X,Y,Board,ShipList);
                 }
@@ -136,7 +137,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x][y+i] = 3;
                     }
-                    ShipList.add(s.place3rdShip(X,Y,orient));
+                    ShipList.add(s.place3rdShip(x,y,orient));
                 } else {
                     sb3(X,Y,Board,ShipList);
                 }
@@ -157,7 +158,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x+i][y]=3;
                     }
-                    ShipList.add(s.place3rdShip(X,Y,orient));
+                    ShipList.add(s.place3rdShip(x,y,orient));
                 } else {
                     sb3(X,Y,Board,ShipList);
                 }
@@ -190,7 +191,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x][y+i] = 2;
                     }
-                    ShipList.add(s.place4thShip(X,Y,orient));
+                    ShipList.add(s.place4thShip(x,y,orient));
                 } else {
                     sb2(X,Y,Board,ShipList);
                 }
@@ -211,7 +212,7 @@ public class AutoArrange implements Strategy {
 
                         Board[x+i][y]=2;
                     }
-                    ShipList.add(s.place4thShip(X,Y,orient));
+                    ShipList.add(s.place4thShip(x,y,orient));
                 } else {
                     sb2(X,Y,Board,ShipList);
                 }

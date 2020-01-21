@@ -214,6 +214,7 @@ public class GameController implements Initializable {
    }
 
       public void checkDamage(int x, int y, BoardModel board, String whichPlayer){
+
          for (ShipModel s:board.getShipList()) {
             int length = s.getLength(); // długość statku
 
@@ -224,6 +225,7 @@ public class GameController implements Initializable {
                   case 5:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4)) {
                         s.damageShip();
+                        System.out.println("hit");
                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
                         }
@@ -298,14 +300,6 @@ public class GameController implements Initializable {
       @Override
       public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-         /*ShipModel s = new ShipModel(0,5,3,0,0);
-=======
-        ShipModel s = new ShipModel(0,5,3,0,0);
->>>>>>> Stashed changes
-         ShipModel s1 = new ShipModel(1,3,4,0,0);
-         ShipModel s2 = new ShipModel(6,5,2,0,1);
-         ShipModel s3 = new ShipModel(3,3,5,0,0);*/
          ShipSimpleFactory f = new ShipSimpleFactory();
          f.place1stShip(0,5,0);
          f.place2ndShip(2,3,0);
@@ -331,9 +325,16 @@ public class GameController implements Initializable {
          pomShipList1.add(f1.getS4());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
 =======
+=======
+
+         ComputerBoard =new BoardModel( new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
+
+>>>>>>> master
          ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
 
@@ -346,12 +347,16 @@ public class GameController implements Initializable {
          ComputerBoard =new BoardModel(10,10,new AutoArrange());
          PlayerTable = new BoardModel(10,10,new AutoArrange());
 
+
          ComputerBoard.setShipBoard();
          PlayerTable.setShipBoard();
 
          ComputerBoard.printBoardpom();
          System.out.println("\n\n\n");
          PlayerTable.printBoardpom();
+         System.out.println(ComputerBoard.getShipList().size());
+         System.out.println(PlayerTable.getShipList().size());
+
 
          buttonArray[0][0]= but00; buttonArray[0][1]= but01; buttonArray[0][2]= but02; buttonArray[0][3]= but03;
          buttonArray[0][4]= but04; buttonArray[0][5]= but05; buttonArray[0][6]= but06; buttonArray[0][7]= but07;
