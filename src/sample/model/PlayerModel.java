@@ -1,5 +1,7 @@
 package sample.model;
 
+import java.util.ArrayList;
+
 public class PlayerModel {
 
 

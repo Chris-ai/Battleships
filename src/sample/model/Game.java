@@ -1,6 +1,4 @@
-package sample;
+package sample.model;
 
 public class Game {
-
-
 }
