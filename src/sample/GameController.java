@@ -9,10 +9,13 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import sample.model.*;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static javax.swing.text.StyleConstants.Background;
 
 public class GameController implements Initializable {
 
