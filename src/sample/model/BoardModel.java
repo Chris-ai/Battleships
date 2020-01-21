@@ -12,6 +12,7 @@ public class BoardModel {
     private Strategy s;
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList) {
         this.X=X;
@@ -20,10 +21,13 @@ public class BoardModel {
         this.Board = new int[X][Y];
 =======
     public BoardModel(Strategy s,List<ShipModel> ShipList) {
+=======
+    public BoardModel(int X, int Y, Strategy s,List<ShipModel> ShipList) {
+        this.Board = new int[X][Y];
+>>>>>>> Stashed changes
         this.X=10;
         this.s=s;
         this.Y=10;
->>>>>>> master
         this.ShipList=ShipList;
         this.Board = new int[X][Y];
 
@@ -34,8 +38,13 @@ public class BoardModel {
             }
         }
     }
+<<<<<<< Updated upstream
 
     public BoardModel(Strategy s) {
+=======
+    public BoardModel(int X, int Y, Strategy s) {
+        this.Board = new int[X][Y];
+>>>>>>> Stashed changes
         this.X=10;
         this.s=s;
         this.Y=10;
@@ -69,6 +78,10 @@ public class BoardModel {
     }
     public int getPos(int x,int y){
         return Board[x][y];
+    }
+
+    public void setPos(int x,int y, int pos){
+        Board[x][y] = pos;
     }
 
     public void printBoardpom(){

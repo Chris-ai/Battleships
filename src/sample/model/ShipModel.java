@@ -12,7 +12,7 @@ public class ShipModel {
     public ShipModel(String name,int length){
         this.name=name;
         this.length = length;
-         // 1 - pozioma 0 - pionowa
+         // 1 - pionowa 0 - pozioma
     }
 
     public int getLength() {
