@@ -47,103 +47,103 @@
             <Button fx:id="but08" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" onAction="#BoardButtonPressed" />
             <Button fx:id="but09" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but10" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="1" />
-            <Button fx:id="but11" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="but12" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="but13" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="but14" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="but15" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button fx:id="but16" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Button fx:id="but18" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button fx:id="but19" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button fx:id="but10" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="1" onAction="#BoardButtonPressed" />
+            <Button fx:id="but11" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#BoardButtonPressed" />
+            <Button fx:id="but12" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but13" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but14" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but15" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but16" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but18" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but19" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="1" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but20" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="2" />
-            <Button fx:id="but21" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="but22" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="but23" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button fx:id="but24" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button fx:id="but25" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button fx:id="but26" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Button fx:id="but27" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Button fx:id="but28" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Button fx:id="but38" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Button fx:id="but29" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Button fx:id="but20" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but21" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but22" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but23" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but24" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but25" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but26" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but27" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but28" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but38" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but29" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="2" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but30" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="3" />
-            <Button fx:id="but31" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="but32" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="but33" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button fx:id="but34" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Button fx:id="but35" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Button fx:id="but36" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Button fx:id="but37" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Button fx:id="but39" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Button fx:id="but30" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but31" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but32" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but33" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but34" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but35" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but36" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but37" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but39" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="3" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but40" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="4" />
-            <Button fx:id="but41" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="but42" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button fx:id="but43" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button fx:id="but44" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Button fx:id="but45" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Button fx:id="but46" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Button fx:id="but47" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Button fx:id="but48" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <Button fx:id="but49" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <Button fx:id="but40" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but41" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#BoardButtonPressed" />
+            <Button fx:id="but42" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but43" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but44" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but45" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but46" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but47" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but48" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but49" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="4" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but50" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="5" />
-            <Button fx:id="but51" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button fx:id="but52" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="but53" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Button fx:id="but54" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Button fx:id="but55" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Button fx:id="but56" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Button fx:id="but57" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Button fx:id="but58" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-            <Button fx:id="but59" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+            <Button fx:id="but50" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but51" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but52" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5" onAction="#BoardButtonPressed" />
+            <Button fx:id="but53" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but54" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but55" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but56" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="5" onAction="#BoardButtonPressed" />
+            <Button fx:id="but57" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but58" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but59" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="5" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but60" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="6" />
-            <Button fx:id="but61" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="but62" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Button fx:id="but63" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Button fx:id="but64" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Button fx:id="but65" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Button fx:id="but66" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <Button fx:id="but67" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <Button fx:id="but68" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-            <Button fx:id="but69" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+            <Button fx:id="but60" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but61" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but62" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but63" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but64" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but65" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but66" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="6" onAction="#BoardButtonPressed" />
+            <Button fx:id="but67" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but68" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but69" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="6" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but70" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="7" />
-            <Button fx:id="but71" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Button fx:id="but72" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Button fx:id="but73" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Button fx:id="but74" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <Button fx:id="but75" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Button fx:id="but76" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Button fx:id="but77" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <Button fx:id="but78" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-            <Button fx:id="but79" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+            <Button fx:id="but70" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but71" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but72" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but73" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but74" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but75" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but76" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but77" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but78" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but79" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="7" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but80" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="8" />
-            <Button fx:id="but81" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button fx:id="but82" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Button fx:id="but83" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Button fx:id="but84" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Button fx:id="but85" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Button fx:id="but86" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Button fx:id="but88" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-            <Button fx:id="but89" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+            <Button fx:id="but80" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but81" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but82" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but83" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but84" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but85" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but86" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but88" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but89" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
 
-            <Button fx:id="but90" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="9" />
-            <Button fx:id="but91" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Button fx:id="but92" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Button fx:id="but93" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Button fx:id="but94" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Button fx:id="but95" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Button fx:id="but87" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-            <Button fx:id="but96" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-            <Button fx:id="but97" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-            <Button fx:id="but98" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-            <Button fx:id="but99" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+            <Button fx:id="but90" prefHeight="28.0" prefWidth="30.0" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but91" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but92" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but93" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="3" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but94" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="4" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but95" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="5" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but87" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="8" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but96" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="6" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but97" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="7" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but98" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="8" GridPane.rowIndex="9" onAction="#BoardButtonPressed"/>
+            <Button fx:id="but99" prefHeight="28.0" prefWidth="30.0" GridPane.columnIndex="9" GridPane.rowIndex="9" onAction="#BoardButtonPressed" />
          </children>
       </GridPane>
 

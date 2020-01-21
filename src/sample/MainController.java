@@ -20,15 +20,20 @@ public class MainController {
 
 
     public void StartGameButtonPressed(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
-        Scene scene = new Scene(root);
 
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+        if(nickname.getText().isEmpty()) {
 
-        PlayerModel newPlayer = new PlayerModel(nickname.getText(),0,0);
+            
+        } else {
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
+            Scene scene = new Scene(root);
 
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+
+            PlayerModel newPlayer = new PlayerModel(nickname.getText(), 0, 0);
+        }
 
     }
 

@@ -33,7 +33,7 @@ public class GameController implements Initializable {
    public List<Label> labels = new ArrayList<>();
 
       private BoardModel ComputerBoard;
-      private BoardModel PlayerBoard;
+      private BoardModel PlayerTable;
       private Button[][] buttonArray = new Button[10][10];
       private Label[][] labelArray = new Label[10][10];
       private Computer c;
@@ -97,6 +97,7 @@ public class GameController implements Initializable {
       public Button but94;    public Button but95;
       public Button but96;    public Button but97;
       public Button but98;    public Button but99;
+   private int param;
 
    /**
     * Trzeba poprawić te metody !
@@ -109,6 +110,7 @@ public class GameController implements Initializable {
          int pomY = 0;
          int pomX1=0;
          int pomY1=0;
+         String param = "Gracz";
 
          for(i = 0; i<10; i++){
             for (j=0;j<10;j++){
@@ -122,25 +124,29 @@ public class GameController implements Initializable {
          }
          if (ComputerBoard.getPos(pomX,pomY)!=0){
             buttonArray[pomX][pomY].setBackground(shooted);
+            buttonArray[pomX][pomY].setDisable(true);
 
-            checkDamage(pomX,pomY, ComputerBoard);
+            checkDamage(pomX,pomY, ComputerBoard, param);
             Position p = c.easyShot(10);
 
 
             if (ComputerBoard.getPos(p.getX(),p.getY())!=0){
+               param = "Komputer";
                labelArray[p.getX()][p.getY()].setBackground(shooted);
-               checkDamage(p.getX(),p.getY(), ComputerBoard);
+               checkDamage(p.getX(),p.getY(), ComputerBoard, param);
             }else{
                labelArray[p.getX()][p.getY()].setBackground(missed);
             }
 
          }else{
             buttonArray[pomX][pomY].setBackground(missed);
+            buttonArray[pomX][pomY].setDisable(true);
             Position p = c.easyShot(10);
 
             if (ComputerBoard.getPos(p.getX(),p.getY())!=0){
+               param = "Komputer";
                labelArray[p.getX()][p.getY()].setBackground(shooted);
-               checkDamage(p.getX(),p.getY(), ComputerBoard);
+               checkDamage(p.getX(),p.getY(), ComputerBoard, param);
             }else{
                labelArray[p.getX()][p.getY()].setBackground(missed);
             }
@@ -151,30 +157,51 @@ public class GameController implements Initializable {
     * Metoda odpowiadająca za kolorowanie przycisków[statku] na kolor niebieski gdy zostanie on zniszczony.
     * @param ship
     */
-   public void ChangeDestroyedShipColor(ShipModel ship){
-         int n=0;
-         int ship_orientation = ship.getOrientation(); // 1 - pozioma 0 - pionowa
+   public void ChangeDestroyedShipColor(ShipModel ship,String Who) {
+      int n = 0;
+      int ship_orientation = ship.getOrientation(); // 1 - pozioma 0 - pionowa
 
-      switch (ship_orientation){
-         case 1:
-            for(int k =0;k<ship.getLength();k++){
-               buttonArray[ship.getX()+n][ship.getY()].setBackground(destroyed);
-               buttonArray[ship.getX()+n][ship.getY()].setDisable(true);
-               n++;
+      switch (Who) {
+         case "Komputer":
+            switch (ship_orientation) {
+               case 1:
+                  for (int k = 0; k < ship.getLength(); k++) {
+                     labelArray[ship.getX() + n][ship.getY()].setBackground(destroyed);
+                     labelArray[ship.getX() + n][ship.getY()].setDisable(true);
+                     n++;
+                  }
+                  break;
+               case 0:
+                  for (int k = 0; k < ship.getLength(); k++) {
+                     labelArray[ship.getX()][ship.getY() + n].setBackground(destroyed);
+                     labelArray[ship.getX()][ship.getY() + n].setDisable(true);
+                     n++;
+                  }
+                  break;
             }
             break;
-         case 0:
-            for(int k =0;k<ship.getLength();k++){
-            buttonArray[ship.getX()][ship.getY()+n].setBackground(destroyed);
-            buttonArray[ship.getX()][ship.getY()+n].setDisable(true);
-            n++;
+         case "Gracz":
+            switch (ship_orientation) {
+               case 1:
+                  for (int k = 0; k < ship.getLength(); k++) {
+                     buttonArray[ship.getX() + n][ship.getY()].setBackground(destroyed);
+                     buttonArray[ship.getX() + n][ship.getY()].setDisable(true);
+                     n++;
+                  }
+                  break;
+               case 0:
+                  for (int k = 0; k < ship.getLength(); k++) {
+                     buttonArray[ship.getX()][ship.getY() + n].setBackground(destroyed);
+                     buttonArray[ship.getX()][ship.getY() + n].setDisable(true);
+                     n++;
+                  }
+                  break;
             }
             break;
-        }
       }
+   }
 
-
-      public void checkDamage(int x, int y, BoardModel board){
+      public void checkDamage(int x, int y, BoardModel board, String whichPlayer){
          for (ShipModel s:board.getShipList()) {
             int length = s.getLength(); // długość statku
 
@@ -186,7 +213,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4) || (x == s.getX() && y == s.getY() + 5)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -194,7 +221,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -202,7 +229,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -210,7 +237,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2)) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -223,7 +250,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY()) || (x == s.getX() + 3 && y == s.getY()) || (x == s.getX() + 4 && y == s.getY()) || (x == s.getX() + 5 && y == s.getY())) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -231,7 +258,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY()) || (x == s.getX() + 3 && y == s.getY()) || (x == s.getX() + 4 && y == s.getY())) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -239,7 +266,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY()) || (x == s.getX() + 3 && y == s.getY())) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -247,7 +274,7 @@ public class GameController implements Initializable {
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() + 1 && y == s.getY()) || (x == s.getX() + 2 && y == s.getY())) {
                         s.damageShip();
                         if (s.getDemage() == s.getLength()) {
-                           ChangeDestroyedShipColor(s);
+                           ChangeDestroyedShipColor(s,whichPlayer);
                         }
                      }
                      break;
@@ -272,14 +299,14 @@ public class GameController implements Initializable {
          pomShipList.add(s3);
 
          ComputerBoard =new BoardModel(10, 10, new ManualArrange(),pomShipList);
-         PlayerBoard = new BoardModel(10,10,new ManualArrange(),pomShipList);
+         PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList);
 
          ComputerBoard.setShipBoard();
-         PlayerBoard.setShipBoard();
+         PlayerTable.setShipBoard();
 
          ComputerBoard.printBoardpom();
          System.out.println("\n\n\n");
-         PlayerBoard.printBoardpom();
+         PlayerTable.printBoardpom();
 
          buttonArray[0][0]= but00;        buttonArray[0][1]= but01;        buttonArray[0][2]= but02;        buttonArray[0][3]= but03;
          buttonArray[0][4]= but04;        buttonArray[0][5]= but05;        buttonArray[0][6]= but06;        buttonArray[0][7]= but07;
