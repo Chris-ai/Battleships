@@ -31,13 +31,15 @@ public class SetShipsOnBoardWindowController implements Initializable {
     public ToggleButton toggle_vertical;
     public ToggleButton toggle_horizontal;
 
-    private final ToggleGroup group = new ToggleGroup();
-    public GridPane PlayerBoard;
+    public ToggleButton ShipWith5length;
+    public ToggleButton ShipWith4length;
+    public ToggleButton ShipWith3length;
+    public ToggleButton ShipWith2length;
 
-    private PlayerModel player;
+    private final ToggleGroup group = new ToggleGroup();
+    private final ToggleGroup ShipsGroup = new ToggleGroup();
     private BoardModel PlayerTable;
     private Button[][] buttonArray;
-    private Strategy Strategy;
 
     public Button but00, but01,but02,but03,but04,but05,but06,but07,but08,but09,but10
     ,but11, but12, but13,but14,but15, but16,but17,but18,but19,but20
