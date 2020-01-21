@@ -1,7 +1,5 @@
 package sample;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,43 +12,64 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.model.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SetShipsOnBoardWindowController implements Initializable {
-    
     public Button StartButton;
     public Button resetButton;
     public Button AutoButton;
     public ToggleButton toggle_vertical;
     public ToggleButton toggle_horizontal;
 
-    private final ToggleGroup group = new ToggleGroup();
-    public GridPane PlayerBoard;
 
-    private PlayerModel player;
+    private final ToggleGroup group = new ToggleGroup();
+    private final ToggleGroup ShipsGroup = new ToggleGroup();
     private BoardModel PlayerTable;
     private Button[][] buttonArray;
-    private Strategy Strategy;
+
+    public ToggleButton fivelength;
+    public ToggleButton fourlength;
+    public ToggleButton threelength;
+    public ToggleButton twolength;
+
+    private PlayerModel player;
+    BoardModel playerTable;
+    ShipSimpleFactory Factory;
+    private List<ShipModel> Ships = new ArrayList<>();
+
 
     public Button but00, but01,but02,but03,but04,but05,but06,but07,but08,but09,but10
-    ,but11, but12, but13,but14,but15, but16,but17,but18,but19,but20
-    ,but21,but22,but23,but24,but25,but26,but27,but28,but29,but30
-    ,but31,but32,but33,but34,but35, but36, but37,but38,but39,but40, but41, but42, but43, but44,but45,but46, but47, but48,but49,but50,but51, but52,but53,but54,but55, but56,but57, but58,but59,but60,but61,but62,
-    but63,but64,but65,but66,but67,but68,but69,but70,but71,but72,but73,but74,but75,
-    but76,but77,but78,but79,but80,but81,but82,but83,but84,but85,but86,but87,but88,but89,but90,but91,
-    but92,but93,but94,but95,but96,but97,but98,but99;
+            ,but11, but12, but13,but14,but15, but16,but17,but18,but19,but20
+            ,but21,but22,but23,but24,but25,but26,but27,but28,but29,but30
+            ,but31,but32,but33,but34,but35, but36, but37,but38,but39,but40, but41, but42, but43, but44,but45,but46, but47, but48,but49,but50,but51, but52,but53,but54,but55, but56,but57, but58,but59,but60,but61,but62,
+            but63,but64,but65,but66,but67,but68,but69,but70,but71,but72,but73,but74,but75,
+            but76,but77,but78,but79,but80,but81,but82,but83,but84,but85,but86,but87,but88,but89,but90,but91,
+            but92,but93,but94,but95,but96,but97,but98,but99;
 
 
     public void resetButtonPressed(ActionEvent actionEvent) {
 
+        fivelength.setDisable(false);
+        fourlength.setDisable(false);
+        threelength.setDisable(false);
+        twolength.setDisable(false);
 
+        for(int i = 0; i< 10; i++)
+            for(int j = 0; j<10; j++){
+                playerTable.setPos(i,j,0);
+                buttonArray[i][j].setDisable(false);
+                buttonArray[i][j].setText(null);
+            }
+
+        playerTable.printBoardpom();
     }
 
     public void startButtonPressed(ActionEvent actionEvent) throws IOException {
@@ -63,18 +82,119 @@ public class SetShipsOnBoardWindowController implements Initializable {
     }
 
     public void autoButtonPressed(ActionEvent actionEvent) {
-        new AutoArrange();
+        playerTable = new BoardModel(10,10,new AutoArrange());
+        playerTable.setShipBoard();
+        playerTable.printBoardpom();
     }
 
     public void BoardButtonPressed(ActionEvent actionEvent) {
 
         Toggle selectedToggle = group.getSelectedToggle();
+        int buttonPositionX = 0, buttonPositionY = 0;
+
+        for(int i = 0; i<10; i++){
+            for (int j=0;j<10;j++){
+                if(actionEvent.getSource()==buttonArray[i][j]){
+                    buttonPositionX = i;
+                    buttonPositionY = j;
+                    break; // Zebranie współrzędnych przycisku kliknietego
+                }
+            }
+        }
+
         if (toggle_vertical.equals(selectedToggle)) {
+<<<<<<< HEAD
 
             toggle_vertical.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
+=======
+            /**
+             * Tutaj kod który ustawia pionowo
+             */
+            Toggle whichShip = ShipsGroup.getSelectedToggle();
+
+            if (fivelength.equals(whichShip)) {
+                int shiplength = 5;
+                Factory.place1stShip(buttonPositionX,buttonPositionY,1);
+                Ships.add(Factory.getS1());
+                for (int i = 0; i < shiplength; i++) {
+                    buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
+                    buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
+                }
+                fivelength.setDisable(true);
+            } else if(fourlength.equals(whichShip)){
+
+                int shiplength = 4;
+                Factory.place2ndShip(buttonPositionX,buttonPositionY,1);
+                Ships.add(Factory.getS2());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
+                    buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
+                }
+                fourlength.setDisable(true);
+
+            } else if(threelength.equals(whichShip)){
+                int shiplength = 3;
+                Factory.place3rdShip(buttonPositionX,buttonPositionY,1);
+                Ships.add(Factory.getS3());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
+                    buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
+                }
+                threelength.setDisable(true);
+
+            } else if(twolength.equals(whichShip)){
+
+                int shiplength = 2;
+                Factory.place4thShip(buttonPositionX,buttonPositionY,1);
+                Ships.add(Factory.getS4());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
+                    buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
+                }
+                twolength.setDisable(true);
+            }
+>>>>>>> master
 
         } else if (toggle_horizontal.equals(selectedToggle)) {
+            /**
+             * Tutaj kod który ustawia poziomo
+             */
+            Toggle whichShip = ShipsGroup.getSelectedToggle();
 
+            if (fivelength.equals(whichShip)) {
+                int shiplength = 5;
+                Factory.place1stShip(buttonPositionX,buttonPositionY,0);
+                Ships.add(Factory.getS1());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX][buttonPositionY + i].setText("⚓");
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setDisable(true);
+                }
+                fivelength.setDisable(true);
+
+            } else if(fourlength.equals(whichShip)){
+
+                int shiplength = 4;
+                Factory.place2ndShip(buttonPositionX,buttonPositionY,0);
+                Ships.add(Factory.getS2());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setText("⚓");
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setDisable(true);
+                }
+                fourlength.setDisable(true);
+
+            } else if(threelength.equals(whichShip)){
+                int shiplength = 3;
+                Factory.place3rdShip(buttonPositionX,buttonPositionY,0);
+                Ships.add(Factory.getS3());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setText("⚓");
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setDisable(true);
+                }
+                threelength.setDisable(true);
+
+            } else if(twolength.equals(whichShip)){
+
+<<<<<<< HEAD
 
             /**
              * Tutaj kod który ustawia vertykalnie
@@ -89,7 +209,32 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
         } else if (toggle_horizontal.equals(selectedToggle)) {
             toggle_horizontal.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
+=======
+                int shiplength = 2;
+                Factory.place4thShip(buttonPositionX,buttonPositionY,0);
+                Ships.add(Factory.getS4());
+                for(int i = 0; i < shiplength;i++) {
+                    buttonArray[buttonPositionX][buttonPositionY+ i].setText("⚓");
+                    buttonArray[buttonPositionX ][buttonPositionY+ i].setDisable(true);
+                }
+                twolength.setDisable(true);
+            }
+>>>>>>> master
         }
+
+        playerTable = new BoardModel(10,10,new ManualArrange(),Ships);
+        playerTable.setShipBoard();
+        playerTable.printBoardpom();
+
+        if(Ships.size() == 4) {
+            for(int i = 0; i < 10;i++)
+                for(int j = 0; j<10;j++){
+                    if(playerTable.getPos(i,j) == 0){
+                        buttonArray[i][j].setDisable(true);
+                    }
+                }
+        }
+
     }
 
     @Override
@@ -100,6 +245,28 @@ public class SetShipsOnBoardWindowController implements Initializable {
         toggle_horizontal.setToggleGroup(group);
         toggle_vertical.setToggleGroup(group);
 
+<<<<<<< HEAD
+=======
+        fivelength.setToggleGroup(ShipsGroup);
+        threelength.setToggleGroup(ShipsGroup);
+        twolength.setToggleGroup(ShipsGroup);
+        fourlength.setToggleGroup(ShipsGroup);
+
+        Factory = new ShipSimpleFactory();
+
+       /* try {
+            FXMLLoader loader = FXMLLoader.load(getClass().getResource("fxml/Main.fxml"));
+            MainController controller = loader.getController();
+            player = controller.getPlayer();
+
+            PlayerTable = new BoardModel(new AutoArrange());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+
+>>>>>>> master
 
 
         buttonArray[0][0]= but00; buttonArray[0][1]= but01; buttonArray[0][2]= but02; buttonArray[0][3]= but03;
