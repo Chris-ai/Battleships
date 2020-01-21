@@ -1,19 +1,18 @@
 package sample.model;
 
 public class ShipModel {
-
+    private String name;
     private int orientation;
     private int x,y;
     private int length;
     private int dmg;
+    private int state; // 1-caly , 0-uszkodzony -1 - zatopiony
 
 
-    public ShipModel(int X, int Y, int length, int demage, int orientation){
-        this.x = X;
-        this.y = Y;
+    public ShipModel(String name,int length){
+        this.name=name;
         this.length = length;
-        this.dmg = demage;
-        this.orientation = orientation; // 1 - pozioma 0 - pionowa
+         // 1 - pozioma 0 - pionowa
     }
 
     public int getLength() {
