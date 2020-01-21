@@ -14,11 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class GameController {
+public class GameController implements Initializable {
 
    // to są kolory dla buttonów i labeli, dodajemy je poprzez np. but00.setBackground(missed);
    public static final Background shooted = new Background(new BackgroundFill(Color.LIGHTGREEN,null,null));
    public static final Background missed = new Background(new BackgroundFill(Color.RED,null,null));
+   public static final Background destroyed = new Background(new BackgroundFill(Color.BLUE,null,null));
 
    public Label lab00, lab01,lab02, lab03, lab04,lab05,lab06, lab17, lab07, lab08,lab09,
     lab10, lab11, lab12, lab13,lab14,lab15, lab16, lab18, lab19, lab20, lab21, lab22,
@@ -101,7 +102,7 @@ public class GameController {
     * @param actionEvent
     */
 
-   public void AboutButtonPressed(ActionEvent actionEvent) {
+   public void BoardButtonPressed(ActionEvent actionEvent) {
          int i,j;
          int pomX=0;
          int pomY = 0;
@@ -127,23 +128,23 @@ public class GameController {
 
 
             if (board.getPos(p.getX(),p.getY())!=0){
-               buttonArray[p.getX()][p.getY()].setTextFill(Color.GREEN);
+               buttonArray[p.getX()][p.getY()].setBackground(shooted);
                checkDamage(p.getX(),p.getY(),board);
             }else{
-               buttonArray[p.getX()][p.getY()].setTextFill(Color.RED);
+               buttonArray[p.getX()][p.getY()].setBackground(missed);
             }
 
          }else{
-            buttonArray[pomX][pomY].setTextFill(Color.RED);
+            buttonArray[pomX][pomY].setBackground(missed);
             Position p = c.easyShot(10);
             for(i = 0; i<10; i++){
 
             }
             if (board.getPos(p.getX(),p.getY())!=0){
-               buttonArray[p.getX()][p.getY()].setTextFill(Color.GREEN);
+               buttonArray[p.getX()][p.getY()].setBackground(shooted);
                checkDamage(p.getX(),p.getY(),board);
             }else{
-               buttonArray[p.getX()][p.getY()].setTextFill(Color.RED);
+               buttonArray[p.getX()][p.getY()].setBackground(missed);
             }
          }
 
@@ -156,7 +157,7 @@ public class GameController {
          if(s.getOrientation()==0){
             for(int k =0;k<s.getLength();k++){
 
-               buttonArray[s.getX()][s.getY()+n].setTextFill(Color.BLUE);
+               buttonArray[s.getX()][s.getY()+n].setBackground(destroyed);
                buttonArray[s.getX()][s.getY()+n].setDisable(true);
                n++;
             }
@@ -254,7 +255,7 @@ public class GameController {
          ShipModel s2 = new ShipModel(6,5,2,0,1);
          ShipModel s3 = new ShipModel(3,3,5,0,0);
          List<ShipModel> pomShipList = new ArrayList<ShipModel>();
-         c = new ComputerModel();
+         c = new Computer();
          pomShipList.add(s);
          pomShipList.add(s1);
          pomShipList.add(s2);
@@ -268,7 +269,7 @@ public class GameController {
 
 
 
-         buttonArray[0][0]= but00;  buttonArray[0][1]= but01;        buttonArray[0][2]= but02;        buttonArray[0][3]= but03;
+         buttonArray[0][0]= but00;        buttonArray[0][1]= but01;        buttonArray[0][2]= but02;        buttonArray[0][3]= but03;
          buttonArray[0][4]= but04;        buttonArray[0][5]= but05;        buttonArray[0][6]= but06;        buttonArray[0][7]= but07;
          buttonArray[0][8]= but08;        buttonArray[0][9]= but09;        buttonArray[1][0]= but10;        buttonArray[1][1]= but11;
          buttonArray[1][2]= but12;        buttonArray[1][3]= but13;        buttonArray[1][4]= but14;        buttonArray[1][5]= but15;

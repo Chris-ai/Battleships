@@ -5,14 +5,14 @@ public class ShipModel {
     private int orientation;
     private int x,y;
     private int length;
-    private int demage;
+    private int dmg;
 
 
     public ShipModel(int X, int Y, int length, int demage, int orientation){
         this.x = X;
         this.y = Y;
         this.length = length;
-        this.demage = demage;
+        this.dmg = demage;
         this.orientation = orientation; // 1 - pozioma 0 - pionowa
     }
 
@@ -25,11 +25,11 @@ public class ShipModel {
     }
 
     public int getDemage() {
-        return demage;
+        return dmg;
     }
 
     public void setDemage(int demage) {
-        this.demage = demage;
+        this.dmg = demage;
     }
 
     public int getX() {
@@ -39,6 +39,7 @@ public class ShipModel {
     public void setX(int x) {
         this.x = x;
     }
+
 
     public int getY() {
         return y;
@@ -54,5 +55,9 @@ public class ShipModel {
 
     public void setOrientation(int orientation) {
         this.orientation = orientation;
+    }
+
+    public void damageShip() {
+        dmg++;
     }
 }
