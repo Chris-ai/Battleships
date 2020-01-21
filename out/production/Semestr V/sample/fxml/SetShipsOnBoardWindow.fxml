@@ -19,7 +19,7 @@
          </children>
       </HBox>
 
-      <GridPane id="grid" fx:id="PlayerBoard" gridLinesVisible="true" layoutX="205.0" layoutY="116.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="116.0">
+      <GridPane  fx:id="PlayerBoard" gridLinesVisible="true" layoutX="205.0" layoutY="116.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="116.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="30.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="30.0" />
@@ -159,8 +159,8 @@
 
       <HBox layoutX="203.0" layoutY="79.0" prefHeight="25.0" prefWidth="168.0">
          <children>
-            <ToggleButton fx:id="toogle_vertical" mnemonicParsing="false" onAction="#Horizontal" prefHeight="25.0" prefWidth="100.0" text="Poziomo" />
-            <ToggleButton fx:id="toggle_horizontal" mnemonicParsing="false" onAction="#Vertical" prefHeight="26.0" prefWidth="99.0" text="Pionowo" />
+            <ToggleButton fx:id="toggle_vertical" mnemonicParsing="false"  prefHeight="25.0" prefWidth="100.0" text="Poziomo" />
+            <ToggleButton fx:id="toggle_horizontal" mnemonicParsing="false"  prefHeight="26.0" prefWidth="99.0" text="Pionowo" />
          </children>
       </HBox>
    </children>

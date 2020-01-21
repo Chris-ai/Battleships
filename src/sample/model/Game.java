@@ -9,7 +9,7 @@ public class Game {
     private List<PlayerModel> players;
     private Computer Level;
 
-    private Game(BoardModel playerBoard, PlayerModel player){
+    private Game(){
 
     }
 

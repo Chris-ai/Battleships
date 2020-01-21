@@ -9,10 +9,10 @@ public class PlayerModel {
     private int points;
     private String nickname;
 
-    public PlayerModel(String nickname, int points, int moves){
+    public PlayerModel(String nickname){
         this.nickname = nickname;
-        this.points = points;
-        this.moves = moves;
+        this.points = 0;
+        this.moves = 0;
     }
 
     public String getNickname() {
