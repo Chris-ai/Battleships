@@ -12,10 +12,24 @@ public class BoardModel {
     private Strategy s;
 
 
+<<<<<<< Updated upstream
     public BoardModel(Strategy s,List<ShipModel> ShipList) {
         this.X=10;
         this.s=s;
         this.Y=10;
+=======
+    public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList) {
+        this.X=X;
+        this.s=s;
+        this.Y=Y;
+        this.Board = new int[X][Y];
+
+    public BoardModel(Strategy s,List<ShipModel> ShipList) {
+        this.X=10;
+        this.s=s;
+        this.Y=10;
+
+>>>>>>> Stashed changes
         this.ShipList=ShipList;
         this.Board = new int[X][Y];
 

@@ -324,6 +324,7 @@ public class GameController implements Initializable {
          pomShipList1.add(f1.getS3());
          pomShipList1.add(f1.getS4());
 
+<<<<<<< Updated upstream
 
          ComputerBoard =new BoardModel( new AutoArrange());
          PlayerTable = new BoardModel(new AutoArrange());
@@ -334,6 +335,25 @@ public class GameController implements Initializable {
 
          ComputerBoard =new BoardModel(new AutoArrange());
          PlayerTable = new BoardModel(new AutoArrange());
+
+=======
+         ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
+         PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
+>>>>>>> Stashed changes
+
+         ComputerBoard =new BoardModel( new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
+
+         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
+         PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
+
+
+         ComputerBoard =new BoardModel(new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
+
+
+         ComputerBoard =new BoardModel(10,10,new AutoArrange());
+         PlayerTable = new BoardModel(10,10,new AutoArrange());
 
 
          ComputerBoard.setShipBoard();

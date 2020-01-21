@@ -72,10 +72,26 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
         Toggle selectedToggle = group.getSelectedToggle();
         if (toggle_vertical.equals(selectedToggle)) {
+<<<<<<< Updated upstream
             toggle_vertical.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
 
         } else if (toggle_horizontal.equals(selectedToggle)) {
 
+=======
+            /**
+             * Tutaj kod który ustawia vertykalnie
+             */
+
+        } else if (toggle_horizontal.equals(selectedToggle)) {
+
+            /**
+             * Tutaj kod który ustawia horyzontalnie
+             */
+            toggle_vertical.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
+
+        } else if (toggle_horizontal.equals(selectedToggle)) {
+
+>>>>>>> Stashed changes
             toggle_horizontal.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
         }
     }
