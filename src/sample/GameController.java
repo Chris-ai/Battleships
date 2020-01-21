@@ -97,7 +97,6 @@ public class GameController implements Initializable {
       public Button but94;    public Button but95;
       public Button but96;    public Button but97;
       public Button but98;    public Button but99;
-   private int param;
 
    /**
     * Trzeba poprawić te metody !

@@ -22,8 +22,8 @@
                   <Font name="Berlin Sans FB Demi Bold" size="32.0" />
                </font>
             </Label>
-      <TextField layoutX="91.0" layoutY="270.0" />
-      <Label fx:id="nickname" layoutX="100.0" layoutY="250.0" text="Nazwa użytkownika" textFill="#fffdfd">
+      <TextField fx:id="nickname" layoutX="91.0" layoutY="270.0" />
+      <Label layoutX="100.0" layoutY="250.0" text="Nazwa użytkownika" textFill="black">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.model.PlayerModel;
 
@@ -16,14 +17,14 @@ public class MainController {
 
     public Button button_start_game;
     public Button button_exit;
-    public Label nickname;
+    public TextField nickname;
 
 
     public void StartGameButtonPressed(ActionEvent actionEvent) throws IOException {
 
-        if(nickname.getText().isEmpty()) {
 
-            
+        if (nickname.getText().isEmpty()) {
+            AlertBox.display("Error", "Nazwa użytkownika jest wymagana!");
         } else {
             Parent root = FXMLLoader.load(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
             Scene scene = new Scene(root);
@@ -34,8 +35,9 @@ public class MainController {
 
             PlayerModel newPlayer = new PlayerModel(nickname.getText(), 0, 0);
         }
-
     }
+
+
 
     public void ExitButtonPressed(ActionEvent actionEvent) {
 
