@@ -6,10 +6,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
-import sample.model.Computer;
+import sample.model.Game;
 
 import java.io.IOException;
 
@@ -87,7 +86,6 @@ public class SetShipsOnBoardWindowController {
     }
 
     public void startButtonPressed(ActionEvent actionEvent) throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("fxml/GameWindow.fxml"));
         Scene scene = new Scene(root);
 

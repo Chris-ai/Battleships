@@ -1,12 +1,16 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import sample.model.*;
 
 import java.awt.*;
@@ -14,11 +18,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import static javax.swing.text.StyleConstants.Background;
 
 public class GameController implements Initializable {
-
    // to są kolory dla buttonów i labeli, dodajemy je poprzez np. but00.setBackground(missed);
    public static final Background shooted = new Background(new BackgroundFill(Color.LIGHTGREEN,null,null));
    public static final Background missed = new Background(new BackgroundFill(Color.RED,null,null));
@@ -33,8 +37,9 @@ public class GameController implements Initializable {
     lab78,lab79,lab80, lab81, lab82, lab83, lab84, lab85, lab86, lab88,lab89,lab90, lab91,lab92, lab93,
      lab94, lab95, lab87, lab96, lab97, lab98,lab99;
 
-   public List<Label> labels = new ArrayList<>();
 
+      public List<Label> labels = new ArrayList<>();
+      public List<Button> buttons = new ArrayList<>();
       private BoardModel ComputerBoard;
       private BoardModel PlayerTable;
       private Button[][] buttonArray = new Button[10][10];
@@ -293,7 +298,7 @@ public class GameController implements Initializable {
          ShipModel s1 = new ShipModel(1,3,4,0,0);
          ShipModel s2 = new ShipModel(6,5,2,0,1);
          ShipModel s3 = new ShipModel(3,3,5,0,0);
-         List<ShipModel> pomShipList = new ArrayList<ShipModel>();
+         List<ShipModel> pomShipList = new ArrayList<>();
          c = new Computer();
          pomShipList.add(s);
          pomShipList.add(s1);

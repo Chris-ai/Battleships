@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sample/model/CareTaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/model/Memento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/SetShipsOnBoardWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SetShipsOnBoardWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/model/Game.java" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,20 +242,24 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579438312482">
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579633748791">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579438312482" />
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579633748791" />
     <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579347080988" />
     <state x="463" y="70" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1579277226827">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="70" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.728@0.0.1366.728" timestamp="1579277226827" />
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1579617950018">
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1579633100797">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579551312468" />
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579633100797" />
     <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579617950018" />
+    <state x="271" y="0" key="CommitChangelistDialog2" timestamp="1579632755421">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="271" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579632755421" />
     <state x="389" y="106" key="FileChooserDialogImpl" timestamp="1579561813381">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -290,10 +306,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="364" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1579298498926" />
-    <state x="163" y="0" width="916" height="708" key="SettingsEditor" timestamp="1579542097812">
+    <state x="163" y="0" width="916" height="708" key="SettingsEditor" timestamp="1579633735495">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579542097812" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1579633735495" />
     <state x="1595" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1579293166166" />
     <state x="448" y="20" width="916" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579541143780" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1579540623827">
