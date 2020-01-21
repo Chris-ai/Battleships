@@ -48,8 +48,6 @@ public class SetShipsOnBoardWindowController implements Initializable {
     but92,but93,but94,but95,but96,but97,but98,but99;
 
 
-
-
     public void resetButtonPressed(ActionEvent actionEvent) {
 
 
@@ -72,12 +70,12 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
         Toggle selectedToggle = group.getSelectedToggle();
         if (toggle_vertical.equals(selectedToggle)) {
-<<<<<<< Updated upstream
+
             toggle_vertical.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
 
         } else if (toggle_horizontal.equals(selectedToggle)) {
 
-=======
+
             /**
              * Tutaj kod który ustawia vertykalnie
              */
@@ -90,8 +88,6 @@ public class SetShipsOnBoardWindowController implements Initializable {
             toggle_vertical.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
 
         } else if (toggle_horizontal.equals(selectedToggle)) {
-
->>>>>>> Stashed changes
             toggle_horizontal.setBackground(new Background(new BackgroundFill(Color.LIGHTGREEN,null,null)));
         }
     }
@@ -103,18 +99,6 @@ public class SetShipsOnBoardWindowController implements Initializable {
         buttonArray = new Button[N][N];
         toggle_horizontal.setToggleGroup(group);
         toggle_vertical.setToggleGroup(group);
-
-       /* try {
-            FXMLLoader loader = FXMLLoader.load(getClass().getResource("fxml/Main.fxml"));
-            MainController controller = loader.getController();
-            player = controller.getPlayer();
-
-            PlayerTable = new BoardModel(new AutoArrange());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
 
 
 
