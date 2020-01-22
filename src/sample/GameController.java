@@ -414,7 +414,10 @@ public Label infoState;
             infoState.setText("Statek został zatopiony");
             i++;
             if (i == 4) {
+                String msg = "Koniec gry, gratulacje " + g.getPlayer().getNickname() + " zdobyles: " + 1000 / g.getPlayer().getMoves() + " punktow";
+                AlertBox.display("Win", msg);
                 infoState.setText("Koniec gry, gratulacje " + g.getPlayer().getNickname() + " zdobyles: " + 1000 / g.getPlayer().getMoves() + " punktow");
+
                 for(int i  =0 ;i<10;i++)
                     for(int j=0;j<10;j++){
                         if(!buttonArray[i][j].isDisable()){
