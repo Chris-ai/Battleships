@@ -11,25 +11,18 @@ public class BoardModel {
     private List<ShipModel> ShipList = new ArrayList<ShipModel>();
     private Strategy s;
 
+    public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList){
+            this.X = X;
+            this.s = s;
+            this.Y = Y;
+            this.Board = new int[X][Y];
 
-<<<<<<< Updated upstream
+        }
     public BoardModel(Strategy s,List<ShipModel> ShipList) {
+
         this.X=10;
         this.s=s;
         this.Y=10;
-=======
-    public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList) {
-        this.X=X;
-        this.s=s;
-        this.Y=Y;
-        this.Board = new int[X][Y];
-
-    public BoardModel(Strategy s,List<ShipModel> ShipList) {
-        this.X=10;
-        this.s=s;
-        this.Y=10;
-
->>>>>>> Stashed changes
         this.ShipList=ShipList;
         this.Board = new int[X][Y];
 
@@ -76,6 +69,7 @@ public class BoardModel {
     public int getPos(int x,int y){
         return Board[x][y];
     }
+    public void setPos(int x,int y, int val){ Board[x][y]=val;}
 
     public void printBoardpom(){
         int char_key = 65;

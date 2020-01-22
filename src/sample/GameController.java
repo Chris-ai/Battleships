@@ -343,13 +343,8 @@ public Label infoState;
           pomShipList1.add(f1.getS3());
           pomShipList1.add(f1.getS4());
 
-
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
           ComputerBoard = new BoardModel(new AutoArrange());
           PlayerTable = new BoardModel(new AutoArrange());
->>>>>>> master
 
           ComputerBoard = new BoardModel(new ManualArrange(), pomShipList);
           PlayerTable = new BoardModel(new ManualArrange(), pomShipList1);
@@ -357,13 +352,8 @@ public Label infoState;
 
           ComputerBoard = new BoardModel(new AutoArrange());
           PlayerTable = new BoardModel(new AutoArrange());
-
-
-<<<<<<< HEAD
-=======
          ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
->>>>>>> Stashed changes
 
          ComputerBoard =new BoardModel( new AutoArrange());
          PlayerTable = new BoardModel(new AutoArrange());
@@ -376,13 +366,11 @@ public Label infoState;
          PlayerTable = new BoardModel(new AutoArrange());
 
 
-         ComputerBoard =new BoardModel(10,10,new AutoArrange());
-         PlayerTable = new BoardModel(10,10,new AutoArrange());
+         ComputerBoard =new BoardModel(new AutoArrange());
+         PlayerTable = new BoardModel(new AutoArrange());
 
-=======
           ComputerBoard.setShipBoard();
           PlayerTable.setShipBoard();
->>>>>>> master
 
           ComputerBoard.printBoardpom();
           System.out.println("\n\n\n");
