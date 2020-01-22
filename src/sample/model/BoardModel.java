@@ -78,7 +78,7 @@ public class BoardModel {
         }
     }
 
-    public void setShipBoard(){
+    public void setAllShips(){
         Board=s.setShipsOnBoard(X,Y,Board,ShipList);
     }
 }

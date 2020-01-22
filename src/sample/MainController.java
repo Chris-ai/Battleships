@@ -52,7 +52,7 @@ public class MainController implements Initializable {
 
                 Scene scene = new Scene(sceneMain);
                 st.setScene(scene);
-                st.setMaximized(true);
+                st.setMaximized(false);
                 st.setTitle("My App");
                 st.show();
             } catch (IOException ex) {

@@ -3,16 +3,12 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.model.*;
 
@@ -80,7 +76,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
     public void autoButtonPressed(ActionEvent actionEvent) {
         playerTable = new BoardModel(new AutoArrange());
-        playerTable.setShipBoard();
+        playerTable.setAllShips();
         playerTable.printBoardpom();
         System.out.println(player.getNickname());
         try{
@@ -95,7 +91,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
             Scene scene = new Scene(sceneMain);
             st.setScene(scene);
-            st.setMaximized(true);
+            st.setMaximized(false);
             st.setTitle("My App");
             st.show();
         } catch (IOException ex) {
@@ -123,14 +119,17 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
             if (toggle_vertical.equals(selectedToggle)) {
                 /**
-                 * Tutaj kod który ustawia pionowo
+                 * Tutaj kod który ustawia statki pionowo
+                 * fivelength
+                 * fourlength itp to ToggleButtony służące do wyboru ktory statek chcemy ustawić i w zależnosci ktory jest wybrany ustawiany jest na planszy
                  */
                 Toggle whichShip = ShipsGroup.getSelectedToggle();
 
                 if (fivelength.equals(whichShip)) {
+
                     int shiplength = 5;
                     Factory.place1stShip(buttonPositionX, buttonPositionY, 1);
-                    Ships.add(Factory.getS1());
+                    Ships.add(Factory.getShipWith5Length());
 
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
@@ -141,7 +140,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
                     int shiplength = 4;
                     Factory.place2ndShip(buttonPositionX, buttonPositionY, 1);
-                    Ships.add(Factory.getS2());
+                    Ships.add(Factory.getShipWith4Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
                         buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
@@ -151,7 +150,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
                 } else if (threelength.equals(whichShip)) {
                     int shiplength = 3;
                     Factory.place3rdShip(buttonPositionX, buttonPositionY, 1);
-                    Ships.add(Factory.getS3());
+                    Ships.add(Factory.getShipWith3Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
                         buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
@@ -162,7 +161,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
                     int shiplength = 2;
                     Factory.place4thShip(buttonPositionX, buttonPositionY, 1);
-                    Ships.add(Factory.getS4());
+                    Ships.add(Factory.SetShipWith2Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX + i][buttonPositionY].setText("⚓");
                         buttonArray[buttonPositionX + i][buttonPositionY].setDisable(true);
@@ -179,7 +178,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
                 if (fivelength.equals(whichShip)) {
                     int shiplength = 5;
                     Factory.place1stShip(buttonPositionX, buttonPositionY, 0);
-                    Ships.add(Factory.getS1());
+                    Ships.add(Factory.getShipWith5Length());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX][buttonPositionY + i].setText("⚓");
                         buttonArray[buttonPositionX][buttonPositionY + i].setDisable(true);
@@ -190,7 +189,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
                     int shiplength = 4;
                     Factory.place2ndShip(buttonPositionX, buttonPositionY, 0);
-                    Ships.add(Factory.getS2());
+                    Ships.add(Factory.getShipWith4Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX][buttonPositionY + i].setText("⚓");
                         buttonArray[buttonPositionX][buttonPositionY + i].setDisable(true);
@@ -200,7 +199,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
                 } else if (threelength.equals(whichShip)) {
                     int shiplength = 3;
                     Factory.place3rdShip(buttonPositionX, buttonPositionY, 0);
-                    Ships.add(Factory.getS3());
+                    Ships.add(Factory.getShipWith3Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX][buttonPositionY + i].setText("⚓");
                         buttonArray[buttonPositionX][buttonPositionY + i].setDisable(true);
@@ -216,7 +215,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
                 } else if (toggle_horizontal.equals(selectedToggle)) {
                     int shiplength = 2;
                     Factory.place4thShip(buttonPositionX, buttonPositionY, 0);
-                    Ships.add(Factory.getS4());
+                    Ships.add(Factory.SetShipWith2Lenght());
                     for (int i = 0; i < shiplength; i++) {
                         buttonArray[buttonPositionX][buttonPositionY + i].setText("⚓");
                         buttonArray[buttonPositionX][buttonPositionY + i].setDisable(true);
@@ -227,7 +226,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
             if(Ships.size() == 4) {
                 playerTable = new BoardModel(s,Ships);
-                playerTable.setShipBoard();
+                playerTable.setAllShips();
                 playerTable.printBoardpom();
 
 
@@ -237,7 +236,7 @@ public class SetShipsOnBoardWindowController implements Initializable {
                             buttonArray[i][j].setDisable(true);
                         }
                     }
-                //=========================
+
                 try{
                 Stage st = new Stage();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/GameWindow.fxml"));
@@ -250,13 +249,13 @@ public class SetShipsOnBoardWindowController implements Initializable {
 
                 Scene scene = new Scene(sceneMain);
                 st.setScene(scene);
-                st.setMaximized(true);
+                st.setMaximized(false);
                 st.setTitle("My App");
                 st.show();
                 } catch (IOException ex) {
                     Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                //==================
+
             }
 
 

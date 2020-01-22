@@ -14,21 +14,22 @@ public class ShipSimpleFactory {
 
     }
 
-    public ShipModel getS1() {
+    public ShipModel getShipWith5Length() {
         return s1;
     }
 
-    public ShipModel getS2() {
+    public ShipModel getShipWith4Lenght() {
         return s2;
     }
 
-    public ShipModel getS3() {
+    public ShipModel getShipWith3Lenght() {
         return s3;
     }
 
-    public ShipModel getS4() {
+    public ShipModel SetShipWith2Lenght() {
         return s4;
     }
+    
     public ShipModel place1stShip(int X,int Y,int orient){
         s1.setX(X);
         s1.setY(Y);

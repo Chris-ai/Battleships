@@ -1,28 +1,19 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import sample.model.*;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
-
-import static javax.swing.text.StyleConstants.Background;
 
 public class GameController implements Initializable,Observer {
    // to są kolory dla buttonów i labeli, dodajemy je poprzez np. but00.setBackground(missed);
@@ -55,6 +46,7 @@ public Label infoState;
       private Computer c;
       private Game g;
       private int moves=0;
+      private int i=0;
       private PlayerModel player;
 
 
@@ -129,6 +121,12 @@ public Label infoState;
    public void setPlayerTable(BoardModel playerTable){
        this.PlayerTable=playerTable;
    }
+
+
+    /**
+     * Strzelanie  na planszy w oknie javyFX
+     * @param actionEvent
+     */
    public void BoardButtonPressed(ActionEvent actionEvent) {
        PlayerTable.printBoardpom();
        g= Game.getInstance(player);
@@ -235,6 +233,13 @@ public Label infoState;
       }
    }
 
+    /**
+     * Metoda sprawdzajaca obrazenia statku i w zaleznosci od tego zmienia stan
+     * @param x
+     * @param y
+     * @param board
+     * @param whichPlayer
+     */
       public void checkDamage(int x, int y, BoardModel board, String whichPlayer){
 
          for (ShipModel s:board.getShipList()) {
@@ -348,10 +353,7 @@ public Label infoState;
 
          ComputerBoard =new BoardModel( new AutoArrange());
 
-
-
-
-          ComputerBoard.setShipBoard();
+          ComputerBoard.setAllShips();
 
           ComputerBoard.printBoardpom();
           System.out.println("\n\n\n");
@@ -405,11 +407,22 @@ public Label infoState;
       }
 
     @Override
-    public void update(int state)  {
-       if(state==0)
-       infoState.setText("Statek został trafiony");
-       if(state==-1)
-        infoState.setText("Statek został zatopiony");
+    public void update(int state) {
+        if (state == 0)
+            infoState.setText("Statek został trafiony");
+        if (state == -1) {
+            infoState.setText("Statek został zatopiony");
+            i++;
+            if (i == 4) {
+                infoState.setText("Koniec gry, gratulacje " + g.getPlayer().getNickname() + " zdobyles: " + 1000 / g.getPlayer().getMoves() + " punktow");
+                for(int i  =0 ;i<10;i++)
+                    for(int j=0;j<10;j++){
+                        if(!buttonArray[i][j].isDisable()){
+                            buttonArray[i][j].setDisable(true);
+                        }
+                    }
 
+            }
+        }
     }
 }

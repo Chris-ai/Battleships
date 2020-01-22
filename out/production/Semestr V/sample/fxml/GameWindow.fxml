@@ -285,9 +285,9 @@
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
 
-      <Label layoutX="531.0" layoutY="82.0" text="Moves:" />
-      <Label id="move_lab" fx:id="move_lab" layoutX="595.0" layoutY="82.0" prefHeight="17.0" prefWidth="234.0" text="0" />
-      <Label id="player_name_lab" fx:id="player_name_lab" layoutX="531.0" layoutY="24.0" text="Label">
+      <Label layoutX="175.0" layoutY="503.0" text="Moves:" />
+      <Label id="move_lab" fx:id="move_lab" layoutX="251.0" layoutY="503.0" prefHeight="17.0" prefWidth="76.0" text="0" />
+      <Label id="player_name_lab" fx:id="player_name_lab" layoutX="100.0" layoutY="24.0" text="Label">
          <font>
             <Font size="36.0" />
          </font>

@@ -19,7 +19,6 @@ public class ShipModel implements Subject {
     public ShipModel(String name,int length){
         this.name=name;
         this.length = length;
-         // 1 - pozioma 0 - pionowa
     }
 
     public int getLength() {
@@ -74,7 +73,6 @@ public class ShipModel implements Subject {
     public void setState(int state)  {
         this.state = state;
         notifyObservers();
-        System.out.println("!!!!!!!!!!");
     }
 
     @Override
