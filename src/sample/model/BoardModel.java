@@ -11,13 +11,6 @@ public class BoardModel {
     private List<ShipModel> ShipList = new ArrayList<ShipModel>();
     private Strategy s;
 
-    public BoardModel(int X, int Y,Strategy s,List<ShipModel> ShipList){
-            this.X = X;
-            this.s = s;
-            this.Y = Y;
-            this.Board = new int[X][Y];
-
-        }
     public BoardModel(Strategy s,List<ShipModel> ShipList) {
 
         this.X=10;

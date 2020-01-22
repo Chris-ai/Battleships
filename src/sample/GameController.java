@@ -123,9 +123,11 @@ public Label infoState;
    public void setPlayer(PlayerModel player){
        this.player=player;
    }
+   public void setPlayerTable(BoardModel playerTable){
+       this.PlayerTable=playerTable;
+   }
    public void BoardButtonPressed(ActionEvent actionEvent) {
          int i,j;
-         int move_count=0;
          int pomX=0;
          int pomY = 0;
          int pomX1=0;
@@ -362,13 +364,7 @@ public Label infoState;
 
 
 
-          g = Game.getInstance(player);
-
-
-
-
-
-         ComputerBoard =new BoardModel( new AutoArrange());
+         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
          PlayerTable = new BoardModel(new AutoArrange());
 
 

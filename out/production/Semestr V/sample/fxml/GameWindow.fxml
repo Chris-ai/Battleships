@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="pane2" prefHeight="596.0" prefWidth="952.0" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameController">
 
 <AnchorPane id="pane2" prefHeight="596.0" prefWidth="952.0" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameController">
 

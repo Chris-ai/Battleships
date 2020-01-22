@@ -19,6 +19,8 @@ import sample.model.PlayerModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainController implements Initializable {
 
@@ -36,16 +38,39 @@ public class MainController implements Initializable {
         if (nickname.getText().isEmpty()) {
             AlertBox.display("Error", "Nazwa użytkownika jest wymagana!");
         } else {
-            Player = new PlayerModel(nickname.getText());
+            /*Player = new PlayerModel(nickname.getText());
             Parent root = FXMLLoader.load(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
             FXMLLoader fxmlloader = new FXMLLoader();
 
             fxmlloader.setBuilderFactory(new JavaFXBuilderFactory());
             Scene scene = new Scene(root);
-
+            //==================================================
+            SetShipsOnBoardWindowController controller = fxmlloader.getController();
+            controller.setPlayer(Player);
+            //==================================================
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             window.setScene(scene);
-            window.show();
+            window.show();*/
+
+
+            try {
+                Player = new PlayerModel(nickname.getText());
+                Stage st = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
+
+                Parent sceneMain = loader.load();
+
+                SetShipsOnBoardWindowController controller = loader.<SetShipsOnBoardWindowController>getController();
+                controller.setPlayer(Player);
+
+                Scene scene = new Scene(sceneMain);
+                st.setScene(scene);
+                st.setMaximized(true);
+                st.setTitle("My App");
+                st.show();
+            } catch (IOException ex) {
+                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         }
     }
