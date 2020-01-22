@@ -1,24 +1,32 @@
 package sample.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
 
     private static Game INSTANCE = null;
     private String state;
-    private List<PlayerModel> players;
-    private Computer Level;
+    private PlayerModel player;
 
-    private Game(){
+    private Game(PlayerModel player){
+        this.state="In progress";
+        this.player=player;
 
     }
 
 
-    /*public static Game getINSTANCE() {
-       if(INSTANCE == null)
-           INSTANCE = new Game();
+    public static Game getInstance(PlayerModel player)
+    {
+        if (INSTANCE == null)
+            INSTANCE = new Game(player);
+
         return INSTANCE;
-    }*/
+    }
+
+    public void setPlayerMoves(int moves){
+        this.player.setMoves(moves);
+    }
 
 
     /**
@@ -35,5 +43,9 @@ public class Game {
 
     public void getStateFromMemento(Memento memento){
         state = memento.getState();
+    }
+
+    public PlayerModel getPlayer() {
+        return player;
     }
 }
