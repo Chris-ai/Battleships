@@ -127,6 +127,8 @@ public Label infoState;
        this.PlayerTable=playerTable;
    }
    public void BoardButtonPressed(ActionEvent actionEvent) {
+       PlayerTable.printBoardpom();
+       g= Game.getInstance(player);
          int i,j;
          int pomX=0;
          int pomY = 0;
@@ -134,8 +136,8 @@ public Label infoState;
          int pomY1=0;
 
 
-         //g.setPlayerMoves(++moves);
-         this.moves=++moves;
+         g.setPlayerMoves(++moves);
+         this.moves=g.getPlayer().getMoves();
          move_lab.setText(String.valueOf(this.moves));
          String param = "Komputer";
 
@@ -333,48 +335,24 @@ public Label infoState;
          }
    }
 
+
       @Override
       public void initialize(URL url, ResourceBundle resourceBundle) {
 
-          g= Game.getInstance(player);
 
-          ShipSimpleFactory f = new ShipSimpleFactory();
-          f.place1stShip(0, 5, 0);
-          f.place2ndShip(2, 3, 0);
-          f.place3rdShip(6, 5, 1);
-          f.place4thShip(4, 3, 0);
-          ShipSimpleFactory f1 = new ShipSimpleFactory();
-          f1.place1stShip(0, 5, 0);
-          f1.place2ndShip(2, 3, 0);
-          f1.place3rdShip(6, 5, 1);
-          f1.place4thShip(4, 3, 0);
 
-          List<ShipModel> pomShipList = new ArrayList<>();
-          List<ShipModel> pomShipList1 = new ArrayList<>();
           c = new Computer();
-          pomShipList.add(f.getS1());
-          pomShipList.add(f.getS2());
-          pomShipList.add(f.getS3());
-          pomShipList.add(f.getS4());
 
-          pomShipList1.add(f1.getS1());
-          pomShipList1.add(f1.getS2());
-          pomShipList1.add(f1.getS3());
-          pomShipList1.add(f1.getS4());
+         ComputerBoard =new BoardModel( new AutoArrange());
 
-
-
-         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
-         PlayerTable = new BoardModel(new AutoArrange());
 
 
 
           ComputerBoard.setShipBoard();
-          PlayerTable.setShipBoard();
 
           ComputerBoard.printBoardpom();
           System.out.println("\n\n\n");
-          PlayerTable.printBoardpom();
+
           for (int i = 0; i < 4; i++)
           {
               ComputerBoard.getShipList().get(i).registerObserver(this);

@@ -38,19 +38,6 @@ public class MainController implements Initializable {
         if (nickname.getText().isEmpty()) {
             AlertBox.display("Error", "Nazwa użytkownika jest wymagana!");
         } else {
-            /*Player = new PlayerModel(nickname.getText());
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/SetShipsOnBoardWindow.fxml"));
-            FXMLLoader fxmlloader = new FXMLLoader();
-
-            fxmlloader.setBuilderFactory(new JavaFXBuilderFactory());
-            Scene scene = new Scene(root);
-            //==================================================
-            SetShipsOnBoardWindowController controller = fxmlloader.getController();
-            controller.setPlayer(Player);
-            //==================================================
-            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            window.setScene(scene);
-            window.show();*/
 
 
             try {

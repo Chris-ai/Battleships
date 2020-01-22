@@ -14,7 +14,6 @@
 
       <HBox layoutX="213.0" layoutY="456.0" prefHeight="65.0" prefWidth="285.0" spacing="10.0">
          <children>
-            <Button fx:id="StartButton" mnemonicParsing="false" onAction="#startButtonPressed" prefHeight="102.0" prefWidth="113.0" text="Start" />
             <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetButtonPressed" prefHeight="102.0" prefWidth="113.0" text="Reset" />
             <Button fx:id="AutoButton" mnemonicParsing="false" onAction="#autoButtonPressed" prefHeight="72.0" prefWidth="113.0" text="Auto" />
          </children>

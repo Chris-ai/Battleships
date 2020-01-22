@@ -21,6 +21,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SetShipsOnBoardWindowController implements Initializable {
     public Button StartButton;
@@ -75,20 +77,30 @@ public class SetShipsOnBoardWindowController implements Initializable {
         playerTable.printBoardpom();
     }
 
-    public void startButtonPressed(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/GameWindow.fxml"));
-        Scene scene = new Scene(root);
-
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(scene);
-        window.show();
-    }
 
     public void autoButtonPressed(ActionEvent actionEvent) {
         playerTable = new BoardModel(new AutoArrange());
         playerTable.setShipBoard();
         playerTable.printBoardpom();
         System.out.println(player.getNickname());
+        try{
+            Stage st = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/GameWindow.fxml"));
+
+            Parent sceneMain = loader.load();
+
+            GameController controller = loader.<GameController>getController();
+            controller.setPlayer(player);
+            controller.setPlayerTable(playerTable);
+
+            Scene scene = new Scene(sceneMain);
+            st.setScene(scene);
+            st.setMaximized(true);
+            st.setTitle("My App");
+            st.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void BoardButtonPressed(ActionEvent actionEvent) {
@@ -217,18 +229,34 @@ public class SetShipsOnBoardWindowController implements Initializable {
                 playerTable = new BoardModel(s,Ships);
                 playerTable.setShipBoard();
                 playerTable.printBoardpom();
-                System.out.println(Ships.size());
-                for (ShipModel s:Ships
-                     ) {
-                    System.out.println(s.getX()+" "+s.getY()+" "+s.getLength());
-                }
+
+
                 for (int i = 0; i < 10; i++)
                     for (int j = 0; j < 10; j++) {
                         if (playerTable.getPos(i, j) == 0) {
                             buttonArray[i][j].setDisable(true);
                         }
                     }
+                //=========================
+                try{
+                Stage st = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/GameWindow.fxml"));
 
+                Parent sceneMain = loader.load();
+
+                GameController controller = loader.<GameController>getController();
+                controller.setPlayer(player);
+                controller.setPlayerTable(playerTable);
+
+                Scene scene = new Scene(sceneMain);
+                st.setScene(scene);
+                st.setMaximized(true);
+                st.setTitle("My App");
+                st.show();
+                } catch (IOException ex) {
+                    Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //==================
             }
 
 
