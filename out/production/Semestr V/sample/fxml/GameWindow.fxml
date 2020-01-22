@@ -286,7 +286,12 @@
          </font></Label>
 
       <Label layoutX="531.0" layoutY="82.0" text="Moves:" />
-      <Label id="move_lab" fx:id="move_lab" layoutX="613.0" layoutY="82.0" prefHeight="17.0" prefWidth="67.0" text="0" />
+      <Label id="move_lab" fx:id="move_lab" layoutX="595.0" layoutY="82.0" prefHeight="17.0" prefWidth="234.0" text="0" />
+      <Label id="player_name_lab" fx:id="player_name_lab" layoutX="531.0" layoutY="24.0" text="Label">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
 
    </children>
 </AnchorPane>

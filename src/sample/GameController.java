@@ -119,9 +119,12 @@ public Label infoState;
       public Button but96;    public Button but97;
       public Button but98;    public Button but99;
 
+      public Label player_name_lab;
+
 
    public void setPlayer(PlayerModel player){
        this.player=player;
+       player_name_lab.setText(player.getNickname());
    }
    public void setPlayerTable(BoardModel playerTable){
        this.PlayerTable=playerTable;
