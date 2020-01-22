@@ -38,12 +38,12 @@ public class GameController implements Initializable,Observer {
     lab63, lab64, lab65,lab66, lab67, lab68, lab69, lab70, lab71, lab72, lab73, lab74, lab75, lab76, lab77,
     lab78,lab79,lab80, lab81, lab82, lab83, lab84, lab85, lab86, lab88,lab89,lab90, lab91,lab92, lab93,
      lab94, lab95, lab87, lab96, lab97, lab98,lab99;
-<<<<<<< Updated upstream
+
 public Label infoState;
-=======
+
    public Label move_lab;
 
->>>>>>> Stashed changes
+
 
       public List<Label> labels = new ArrayList<>();
       public List<Button> buttons = new ArrayList<>();
@@ -240,13 +240,11 @@ public Label infoState;
                   case 5:
                      if ((x == s.getX() && y == s.getY()) || (x == s.getX() && y == s.getY() + 1) || (x == s.getX() && y == s.getY() + 2) || (x == s.getX() && y == s.getY() + 3) || (x == s.getX() && y == s.getY() + 4)) {
                         s.damageShip();
-<<<<<<< Updated upstream
                          s.setState(0);
 
                          System.out.println("hit");
 
-=======
->>>>>>> Stashed changes
+
                         if (s.getDemage() == s.getLength()) {
                            ChangeDestroyedShipColor(s,whichPlayer);
 
@@ -336,7 +334,8 @@ public Label infoState;
       @Override
       public void initialize(URL url, ResourceBundle resourceBundle) {
 
-<<<<<<< Updated upstream
+          g= Game.getInstance(player);
+
           ShipSimpleFactory f = new ShipSimpleFactory();
           f.place1stShip(0, 5, 0);
           f.place2ndShip(2, 3, 0);
@@ -361,59 +360,18 @@ public Label infoState;
           pomShipList1.add(f1.getS3());
           pomShipList1.add(f1.getS4());
 
-          ComputerBoard = new BoardModel(new AutoArrange());
-          PlayerTable = new BoardModel(new AutoArrange());
-
-          ComputerBoard = new BoardModel(new ManualArrange(), pomShipList);
-          PlayerTable = new BoardModel(new ManualArrange(), pomShipList1);
 
 
-          ComputerBoard = new BoardModel(new AutoArrange());
-          PlayerTable = new BoardModel(new AutoArrange());
-         ComputerBoard =new BoardModel(10,10,new ManualArrange(),pomShipList);
-         PlayerTable = new BoardModel(10,10,new ManualArrange(),pomShipList1);
-=======
           g = Game.getInstance(player);
 
-         ShipSimpleFactory f = new ShipSimpleFactory();
-         f.place1stShip(0,5,0);
-         f.place2ndShip(2,3,0);
-         f.place3rdShip(6,5,1);
-         f.place4thShip(4,3,0);
-         ShipSimpleFactory f1 = new ShipSimpleFactory();
-         f1.place1stShip(0,5,0);
-         f1.place2ndShip(2,3,0);
-         f1.place3rdShip(6,5,1);
-         f1.place4thShip(4,3,0);
 
-         List<ShipModel> pomShipList = new ArrayList<>();
-         List<ShipModel> pomShipList1 = new ArrayList<>();
-         c = new Computer();
-         pomShipList.add(f.getS1());
-         pomShipList.add(f.getS2());
-         pomShipList.add(f.getS3());
-         pomShipList.add(f.getS4());
 
-         pomShipList1.add(f1.getS1());
-         pomShipList1.add(f1.getS2());
-         pomShipList1.add(f1.getS3());
-         pomShipList1.add(f1.getS4());
 
->>>>>>> Stashed changes
 
          ComputerBoard =new BoardModel( new AutoArrange());
          PlayerTable = new BoardModel(new AutoArrange());
 
-         ComputerBoard =new BoardModel( new ManualArrange(),pomShipList);
-         PlayerTable = new BoardModel(new ManualArrange(),pomShipList1);
 
-
-         ComputerBoard =new BoardModel(new AutoArrange());
-         PlayerTable = new BoardModel(new AutoArrange());
-
-
-         ComputerBoard =new BoardModel(new AutoArrange());
-         PlayerTable = new BoardModel(new AutoArrange());
 
           ComputerBoard.setShipBoard();
           PlayerTable.setShipBoard();
